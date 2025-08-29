@@ -41,7 +41,7 @@ export default function HeroSearch() {
           <form className="flex w-full overflow-hidden rounded-lg border border-[#b45a56]">
             <Input
               type="text"
-              placeholder="İstediğin ürünü ara..."
+              placeholder="İstediğin ürünü bul..."
               className="flex-1 px-6 py-4 text-gray-700 focus:outline-none"
             />
             <Button
@@ -55,7 +55,7 @@ export default function HeroSearch() {
 
         {/* CTA */}
         <Link
-          href="/urunler"
+          href="/products"
           className="inline-block mt-4 px-8 py-3 rounded-lg bg-[#ce6530] text-black font-semibold hover:bg-[#b44d1d] transition"
         >
           Hemen Keşfet

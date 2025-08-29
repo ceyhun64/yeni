@@ -11,27 +11,33 @@ import {
   Wrench,
   Layers,
 } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const FeaturedCategories = () => {
   return (
-    <section className="py-32 px-10">
+    <section className="py-10 px-30">
       <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
         Öne Çıkan Kategoriler
       </h2>
       <div className="container">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-12">
-          {/* Çimento & Harç */}
-          <Card className="bg-primary dark:bg-background relative h-60 overflow-hidden rounded-3xl md:col-span-2 md:row-span-2 lg:col-span-4 lg:h-[400px]">
-            <CardContent className="flex h-full flex-col justify-end p-6">
-              <h2 className="text-primary-foreground dark:text-foreground text-left text-lg font-medium">
-                Çimento & Harç
+          <Card className="relative h-60 overflow-hidden rounded-3xl border md:col-span-2 md:row-span-2 lg:col-span-4 lg:h-[400px]">
+            <Image
+              src="/featuredCategory/cimento.jpeg"
+              alt="Çimento & Kum"
+              fill
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <CardContent className="z-10 flex h-full flex-col justify-end p-6 bg-black/40">
+              <h2 className="text-left text-lg font-medium text-white">
+                Çimento & Kum
               </h2>
               <div className="absolute left-6 top-6 z-10">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 dark:bg-black/20">
-                  <Factory className="h-5 w-5 text-white dark:text-white" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+                  <BrickWall className="h-5 w-5 text-white" />
                 </div>
               </div>
             </CardContent>
@@ -39,9 +45,10 @@ const FeaturedCategories = () => {
 
           {/* Tuğla & Briket */}
           <Card className="relative h-60 overflow-hidden rounded-3xl border md:col-span-2 md:row-span-2 lg:col-span-4 lg:h-[400px]">
-            <img
-              src="/images/categories/tugla.jpg"
+            <Image
+              src="/featuredCategory/tugla.jpg"
               alt="Tuğla & Briket"
+              fill
               className="absolute inset-0 h-full w-full object-cover"
             />
             <CardContent className="z-10 flex h-full flex-col justify-end p-6 bg-black/40">
@@ -57,14 +64,20 @@ const FeaturedCategories = () => {
           </Card>
 
           {/* Boya & Kimyasallar */}
-          <Card className="bg-primary dark:bg-background relative h-60 overflow-hidden rounded-3xl md:col-span-2 md:row-span-2 lg:col-span-4 lg:h-[400px]">
-            <CardContent className="flex h-full flex-col justify-end p-6">
-              <h2 className="text-primary-foreground dark:text-foreground text-left text-lg font-medium">
+          <Card className="relative h-60 overflow-hidden rounded-3xl border md:col-span-2 md:row-span-2 lg:col-span-4 lg:h-[400px]">
+            <Image
+              src="/featuredCategory/boya.jpeg"
+              alt="Boya & Kimyasallar"
+              fill
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <CardContent className="z-10 flex h-full flex-col justify-end p-6 bg-black/40">
+              <h2 className="text-left text-lg font-medium text-white">
                 Boya & Kimyasallar
               </h2>
               <div className="absolute left-6 top-6 z-10">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 dark:bg-black/20">
-                  <Paintbrush className="h-5 w-5 text-white" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+                  <BrickWall className="h-5 w-5 text-white" />
                 </div>
               </div>
             </CardContent>

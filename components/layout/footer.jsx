@@ -25,7 +25,7 @@ const defaultSections = [
   {
     title: "İletişim",
     links: [
-      { name: "Bize Ulaşın", href: "#" },
+      { name: "Bize Ulaşın", href: "/contact" },
       { name: "Bayilik Başvurusu", href: "#" },
       { name: "Sık Sorulan Sorular", href: "#" },
       { name: "Destek", href: "#" },
@@ -54,12 +54,12 @@ export default function Footer({
   sections = defaultSections,
   description = "İnşaat projeleriniz için kaliteli ve güvenilir malzemeler sunuyoruz. Tüm ihtiyaçlarınıza tek bir çatı altında çözüm üretiyoruz.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2025 FirmaAdı. Tüm hakları saklıdır.",
+  copyright = "© 2025 inşaat. Tüm hakları saklıdır.",
   legalLinks = defaultLegalLinks,
 }) {
   return (
-    <section className="border-t py-10">
-      <div className="container mx-auto px-6">
+    <section className="border-t py-10 px-30">
+      <div className="container mx-auto">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           {/* Sol taraf */}
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">

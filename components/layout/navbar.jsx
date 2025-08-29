@@ -37,10 +37,8 @@ export default function Navbar() {
       <div className="text-xl text-bold text-serif ">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo/logo.jpeg" alt="logo" width={30} height={30} />
-          <GradientText
-            className="text-2xl font-bold font-sans"
-            text="inşaat"
-          />
+                      <h2 className="text-2xl font-serif font-bold text-slate-600">inşaat</h2>
+
         </Link>
       </div>
 

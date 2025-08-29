@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "image": "https://via.placeholder.com/300",
+    "title": "Çimento - 50kg Torba",
+    "price": 150,
+    "description": "Her türlü inşaat, sıva ve beton işleri için uygun, yüksek mukavemetli çimento.",
+    "rate": 4.8
+  },
+  {
+    "id": 2,
+    "image": "https://via.placeholder.com/300",
+    "title": "İnce Kum - 25kg Torba",
+    "price": 45,
+    "description": "Sıva ve duvar örme işlerinde kullanılan, elenmiş ve temiz ince kum.",
+    "rate": 4.5
+  },
+  {
+    "id": 3,
+    "image": "https://via.placeholder.com/300",
+    "title": "Tuğla - Kırmızı Standart",
+    "price": 5,
+    "description": "Dış ve iç duvar yapımında kullanılan, dayanıklı ve standart ölçülerde tuğla.",
+    "rate": 4.1
+  },
+  {
+    "id": 4,
+    "image": "https://via.placeholder.com/300",
+    "title": "Demir Donatı - 12mm Çap",
+    "price": 250,
+    "description": "Betonarme yapılar için kullanılan, yüksek gerilme dayanımına sahip demir donatı.",
+    "rate": 4.9
+  },
+  {
+    "id": 5,
+    "image": "https://via.placeholder.com/300",
+    "title": "Alçı Sıva - 30kg Torba",
+    "price": 90,
+    "description": "İç mekanlarda düzgün ve pürüzsüz yüzeyler elde etmek için kullanılan alçı sıva.",
+    "rate": 4.7
+  },
+  {
+    "id": 6,
+    "image": "https://via.placeholder.com/300",
+    "title": "Seramik Karo Yapıştırıcısı - 20kg",
+    "price": 110,
+    "description": "Fayans ve seramiklerin zemin ve duvara sağlam bir şekilde yapıştırılması için kullanılır.",
+    "rate": 4.6
+  },
+  {
+    "id": 7,
+    "image": "https://via.placeholder.com/300",
+    "title": "Ahşap Kapı - İç Mekan",
+    "price": 850,
+    "description": "İç mekanlar için standart ölçülerde, montaja hazır ahşap kapı.",
+    "rate": 4.3
+  },
+  {
+    "id": 8,
+    "image": "https://via.placeholder.com/300",
+    "title": "Dış Cephe Boyası - 15L",
+    "price": 450,
+    "description": "Dış cepheler için suya ve güneşe dayanıklı, uzun ömürlü akrilik boya.",
+    "rate": 4.4
+  },
+  {
+    "id": 9,
+    "image": "https://via.placeholder.com/300",
+    "title": "PVC Pencere - Çift Camlı",
+    "price": 1200,
+    "description": "Yüksek ısı ve ses yalıtımı sağlayan, çift camlı ve PVC çerçeveli pencere.",
+    "rate": 4.9
+  },
+  {
+    "id": 10,
+    "image": "https://via.placeholder.com/300",
+    "title": "Parke Laminat - Metrekare Fiyatı",
+    "price": 180,
+    "description": "Ev ve ofis kullanımı için uygun, kolay döşenen laminat parke.",
+    "rate": 4.2
+  },
+  {
+    "id": 11,
+    "image": "https://via.placeholder.com/300",
+    "title": "İzolasyon Malzemesi - Taş Yünü",
+    "price": 320,
+    "description": "Ses ve ısı yalıtımı için kullanılan, yangına dayanıklı taş yünü levha.",
+    "rate": 4.8
+  },
+  {
+    "id": 12,
+    "image": "https://via.placeholder.com/300",
+    "title": "Kiremit - Çatı İçin",
+    "price": 12,
+    "description": "Geleneksel ve modern yapılar için uygun, su geçirmez seramik kiremit.",
+    "rate": 4.5
+  },
+  {
+    "id": 13,
+    "image": "https://via.placeholder.com/300",
+    "title": "Beton Harç Karıştırıcı",
+    "price": 1500,
+    "description": "Çimento, kum ve su karışımını homojen hale getirmek için kullanılan elektrikli harç makinesi.",
+    "rate": 4.7
+  },
+  {
+    "id": 14,
+    "image": "https://via.placeholder.com/300",
+    "title": "İnşaat Demir Kesme Makası",
+    "price": 600,
+    "description": "İnşaat demirlerini kolayca kesmek için kullanılan, dayanıklı el aleti.",
+    "rate": 4.4
+  },
+  {
+    "id": 15,
+    "image": "https://via.placeholder.com/300",
+    "title": "Koruyucu İnşaat Kaskı",
+    "price": 80,
+    "description": "Şantiye ortamında başınızı darbelerden korumak için tasarlanmış güvenlik kaskı.",
+    "rate": 4.9
+  },
+  {
+    "id": 16,
+    "image": "https://via.placeholder.com/300",
+    "title": "Su Tesisatı Borusu - PVC",
+    "price": 35,
+    "description": "Temiz su tesisatında kullanılan, dayanıklı ve uzun ömürlü PVC boru.",
+    "rate": 4.6
+  },
+  {
+    "id": 17,
+    "image": "https://via.placeholder.com/300",
+    "title": "Elektrik Kablosu - 3x2.5mm",
+    "price": 25,
+    "description": "Ev içi elektrik tesisatında kullanılan, standart kalınlıkta bakır kablo.",
+    "rate": 4.8
+  },
+  {
+    "id": 18,
+    "image": "https://via.placeholder.com/300",
+    "title": "Çelik Halat - 10mm Çap",
+    "price": 120,
+    "description": "Yüksek mukavemet gerektiren işlerde kullanılan, galvanizli çelik halat.",
+    "rate": 4.3
+  },
+  {
+    "id": 19,
+    "image": "https://via.placeholder.com/300",
+    "title": "Sıcak Su Kazanı",
+    "price": 3000,
+    "description": "Büyük binalar için merkezi ısıtma sistemi kazanı.",
+    "rate": 4.5
+  },
+  {
+    "id": 20,
+    "image": "https://via.placeholder.com/300",
+    "title": "Güvenlik Filesi",
+    "price": 280,
+    "description": "Yüksek katlı inşaatlarda düşmelere karşı koruma sağlayan güvenlik filesi.",
+    "rate": 4.9
+  },
+  {
+    "id": 21,
+    "image": "https://via.placeholder.com/300",
+    "title": "Çatı Membranı - 10m Rulo",
+    "price": 380,
+    "description": "Çatı ve teraslarda su yalıtımı için kullanılan, dayanıklı membran malzeme.",
+    "rate": 4.7
+  },
+  {
+    "id": 22,
+    "image": "https://via.placeholder.com/300",
+    "title": "Alüminyum Merdiven - 3m",
+    "price": 550,
+    "description": "Hafif ve taşıması kolay, 3 metre uzunluğunda katlanabilir alüminyum merdiven.",
+    "rate": 4.5
+  },
+  {
+    "id": 23,
+    "image": "https://via.placeholder.com/300",
+    "title": "Duvar Seramiği - 1. Kalite",
+    "price": 95,
+    "description": "Banyo ve mutfak duvarları için uygun, kolay temizlenebilen, birinci kalite seramik.",
+    "rate": 4.6
+  },
+  {
+    "id": 24,
+    "image": "https://via.placeholder.com/300",
+    "title": "Su Motoru - 1 HP",
+    "price": 750,
+    "description": "İnşaat alanlarında su tahliyesi ve basma işleri için kullanılan 1 beygir gücünde su motoru.",
+    "rate": 4.4
+  },
+  {
+    "id": 25,
+    "image": "https://via.placeholder.com/300",
+    "title": "Mastik Dolgu Malzemesi",
+    "price": 85,
+    "description": "Çatlak ve boşlukları doldurmak için kullanılan, esnek ve su geçirmez mastik.",
+    "rate": 4.1
+  },
+  {
+    "id": 26,
+    "image": "https://via.placeholder.com/300",
+    "title": "Kaba Sıva - 50kg Torba",
+    "price": 100,
+    "description": "Duvarların ilk sıvası için kullanılan, yüksek yapışma gücüne sahip kaba sıva.",
+    "rate": 4.2
+  },
+  {
+    "id": 27,
+    "image": "https://via.placeholder.com/300",
+    "title": "Drenaj Borusu - 100mm",
+    "price": 60,
+    "description": "Toprak altı su tahliyesi için kullanılan, delikli ve dayanıklı drenaj borusu.",
+    "rate": 4.5
+  },
+  {
+    "id": 28,
+    "image": "https://via.placeholder.com/300",
+    "title": "Beton Çivisi - 100 Adet",
+    "price": 30,
+    "description": "Beton zeminlere ve duvarlara sabitleme yapmak için kullanılan özel çelik çivi.",
+    "rate": 4.8
+  },
+  {
+    "id": 29,
+    "image": "https://via.placeholder.com/300",
+    "title": "Su Terazisi - 100cm",
+    "price": 120,
+    "description": "Yüzeylerin düzgünlüğünü kontrol etmek için kullanılan, 100 cm uzunluğunda su terazisi.",
+    "rate": 4.9
+  },
+  {
+    "id": 30,
+    "image": "https://via.placeholder.com/300",
+    "title": "Plastik Boru Kaynak Makinesi",
+    "price": 950,
+    "description": "Plastik su borularını birleştirmek için kullanılan profesyonel kaynak makinesi.",
+    "rate": 4.7
+  }
+]

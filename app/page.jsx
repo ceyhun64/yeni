@@ -6,7 +6,7 @@ import Gallery from "@/components/home/gallery";
 import Request from "@/components/home/request";
 import GridMotionBackgroundDemo from "@/components/home/banner";
 import SocialMedia from "@/components/home/social-media";
-import { FeaturedCategories } from "@/components/home/featuredProducts";
+import { FeaturedCategories } from "@/components/home/featuredCategories";
 
 export default function Home() {
   return (
@@ -14,11 +14,10 @@ export default function Home() {
       <Navbar />
       <Heroes />
       <Request />
-            <FeaturedCategories />
-
+      <FeaturedCategories />
       {/* <GridMotionBackgroundDemo /> */}
       <Gallery />
-      <SocialMedia/>
+      <SocialMedia />
       <Footer />
     </div>
   );
