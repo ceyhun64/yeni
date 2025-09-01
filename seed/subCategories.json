@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "categoryId": 1,
+    "name": "Portland Çimento",
+    "slug": "portland-cimento",
+    "description": "Standart çimento çeşitleri, inşaat ve beton işleri için."
+  },
+  {
+    "id": 2,
+    "categoryId": 1,
+    "name": "Hazır Harç",
+    "slug": "hazir-harc",
+    "description": "Sıva, duvar ve zemin harçları."
+  },
+  {
+    "id": 3,
+    "categoryId": 2,
+    "name": "İnşaat Demiri",
+    "slug": "insaat-demiri",
+    "description": "Betonarme için gerekli demirler ve hasırlar."
+  },
+  {
+    "id": 4,
+    "categoryId": 2,
+    "name": "Çelik Profil",
+    "slug": "celik-profil",
+    "description": "Konstrüksiyon ve çatı sistemleri için çelik profiller."
+  },
+  {
+    "id": 5,
+    "categoryId": 3,
+    "name": "Tuğla",
+    "slug": "tugla",
+    "description": "Klasik ve gazbeton tuğlalar."
+  },
+  {
+    "id": 6,
+    "categoryId": 3,
+    "name": "Briket",
+    "slug": "briket",
+    "description": "Duvar ve temel yapıları için briketler."
+  },
+  {
+    "id": 7,
+    "categoryId": 4,
+    "name": "Isı Yalıtımı",
+    "slug": "isi-yalitimi",
+    "description": "Dış cephe ve çatı yalıtım malzemeleri."
+  },
+  {
+    "id": 8,
+    "categoryId": 4,
+    "name": "Su Yalıtımı",
+    "slug": "su-yalitimi",
+    "description": "Banyo, teras ve çatı su izolasyon ürünleri."
+  },
+  {
+    "id": 9,
+    "categoryId": 5,
+    "name": "İç Cephe Boyası",
+    "slug": "ic-cephe-boyasi",
+    "description": "Tavan ve duvar boyaları."
+  },
+  {
+    "id": 10,
+    "categoryId": 5,
+    "name": "Dış Cephe Boyası",
+    "slug": "dis-cephe-boyasi",
+    "description": "Dış cephe kaplamaları ve koruyucu boyalar."
+  },
+  {
+    "id": 11,
+    "categoryId": 6,
+    "name": "Kablolar ve Prizler",
+    "slug": "kablolar-prizler",
+    "description": "Elektrik tesisatı için kablo ve prizler."
+  },
+  {
+    "id": 12,
+    "categoryId": 6,
+    "name": "Elektrik Panoları",
+    "slug": "elektrik-panolari",
+    "description": "Dağıtım ve sigorta panoları."
+  },
+  {
+    "id": 13,
+    "categoryId": 7,
+    "name": "Boru ve Vana",
+    "slug": "boru-vana",
+    "description": "Su tesisatı için boru ve vana çeşitleri."
+  },
+  {
+    "id": 14,
+    "categoryId": 7,
+    "name": "Musluk ve Armatür",
+    "slug": "musluk-armatur",
+    "description": "Banyo ve mutfak armatürleri."
+  },
+  {
+    "id": 15,
+    "categoryId": 8,
+    "name": "Kapılar",
+    "slug": "kapilar",
+    "description": "Ahşap ve metal kapılar."
+  },
+  {
+    "id": 16,
+    "categoryId": 8,
+    "name": "Parke ve Laminat",
+    "slug": "parke-laminat",
+    "description": "Zemin kaplama malzemeleri."
+  },
+  {
+    "id": 17,
+    "categoryId": 9,
+    "name": "Çatı Kiremitleri",
+    "slug": "cati-kiremitleri",
+    "description": "Farklı renk ve tiplerde çatı kiremitleri."
+  },
+  {
+    "id": 18,
+    "categoryId": 9,
+    "name": "Oluk ve Dere",
+    "slug": "oluk-dere",
+    "description": "Çatı su tahliye sistemleri."
+  },
+  {
+    "id": 19,
+    "categoryId": 10,
+    "name": "El Aletleri",
+    "slug": "el-aletleri",
+    "description": "Çekiç, pense, matkap gibi temel inşaat aletleri."
+  },
+  {
+    "id": 20,
+    "categoryId": 10,
+    "name": "Elektrikli Aletler",
+    "slug": "elektrikli-aletler",
+    "description": "Matkap, taşlama ve elektrikli el aletleri."
+  }
+]

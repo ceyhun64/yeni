@@ -15,6 +15,9 @@ export default function Login() {
           {/* Sol taraf - Giriş */}
           <div className="p-10 flex flex-col justify-center">
             <h2 className="text-4xl font-serif font-bold mb-8">Giriş Yap</h2>
+            <h3 className="text-4xl font-serif font-bold mb-8">
+              (müşteri/firma)
+            </h3>
 
             <div className="mb-4">
               <Label
@@ -69,7 +72,7 @@ export default function Login() {
               <li>Yeni siparişleri takip edebilirsiniz</li>
               <li>İstek listenize ürün kaydedebilirsiniz</li>
             </ul>
-            <Button >
+            <Button>
               <Link href="/register">Hesap Oluştur</Link>
             </Button>
           </div>

@@ -1,13 +1,13 @@
 import React from "react";
-import ProductDetail from "@/components/modules/product/productDetail";
+import Security from "@/components/modules/user-panel/account/security";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
-export default function Detail() {
+export default function SecurityPage() {
   return (
     <div>
       <Navbar />
-      <ProductDetail />
+      <Security />
       <Footer />
     </div>
   );

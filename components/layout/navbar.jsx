@@ -1,15 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import { Search, User, ShoppingBag, X, ArrowRight } from "lucide-react";
+import { User, ShoppingBag, Settings } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Sheet,
   SheetClose,
@@ -27,8 +25,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
-import { GradientText } from "@/components/io/gradient-text";
-
 
 export default function Navbar() {
   return (
@@ -37,14 +33,23 @@ export default function Navbar() {
       <div className="text-xl text-bold text-serif ">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo/logo.jpeg" alt="logo" width={30} height={30} />
-                      <h2 className="text-2xl font-serif font-bold text-slate-600">inşaat</h2>
-
+          <h2 className="text-2xl font-serif font-bold text-slate-600">
+            inşaat
+          </h2>
         </Link>
       </div>
 
       {/* Navigasyon Menüsü */}
       <NavigationMenu>
         <NavigationMenuList>
+          {/* ✅ En sola İş Havuzu alanı */}
+          <NavigationMenuItem>
+            <Link href="/ishavuzu">
+              <Button variant="ghost">İş Havuzu</Button>
+            </Link>
+          </NavigationMenuItem>
+
+          {/* Showroom */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost">Showroom</Button>
@@ -67,6 +72,8 @@ export default function Navbar() {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* İnşaat & Tadilat Hesaplama */}
           <NavigationMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -89,6 +96,8 @@ export default function Navbar() {
               </DropdownMenuContent>
             </DropdownMenu>
           </NavigationMenuItem>
+
+          {/* Hizmetlerimiz */}
           <NavigationMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -117,6 +126,11 @@ export default function Navbar() {
       {/* İkonlar */}
       <div className="flex gap-3">
         {/* Kullanıcı */}
+        <Link href="/user-panel">
+          <Button variant="ghost" size="icon" aria-label="Ayarlar">
+            <Settings className="h-5 w-5" />
+          </Button>
+        </Link>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" aria-label="Kullanıcı">
@@ -145,7 +159,7 @@ export default function Navbar() {
               <SheetTitle>Alışveriş Sepeti</SheetTitle>
               <SheetDescription>
                 Sepetinizdeki ürünleri görüntüleyebilir, miktarlarını
-                değiştirebilir veya ödeme yapabilirsiniz.
+                değiştirebilir veya talep oluşturabilirsiniz.
               </SheetDescription>
             </SheetHeader>
 
@@ -161,7 +175,6 @@ export default function Navbar() {
                     />
                     <div>
                       <p className="font-medium">Ürün Adı 1</p>
-                      <p className="text-sm text-muted-foreground">₺199.90</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -185,7 +198,6 @@ export default function Navbar() {
                     />
                     <div>
                       <p className="font-medium">Ürün Adı 2</p>
-                      <p className="text-sm text-muted-foreground">₺89.90</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
@@ -202,11 +214,9 @@ export default function Navbar() {
             </div>
 
             <SheetFooter className="flex flex-col gap-2 border-t pt-4">
-              <div className="flex justify-between text-lg font-bold">
-                <span>Toplam:</span>
-                <span>₺379.70</span>
-              </div>
-              <Button className="w-full">Ödeme Yap</Button>
+              <Link href={"/request"}>
+                <Button className="w-full">Talep Oluştur</Button>
+              </Link>
               <SheetClose asChild>
                 <Button variant="outline" className="w-full">
                   Alışverişe Devam Et

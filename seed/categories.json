@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Çimento ve Harç",
+    "slug": "cimento-harc"
+  },
+  {
+    "id": 2,
+    "name": "Demir ve Çelik",
+    "slug": "demir-celik"
+  },
+  {
+    "id": 3,
+    "name": "Tuğla ve Blok",
+    "slug": "tugla-blok"
+  },
+  {
+    "id": 4,
+    "name": "İzolasyon ve Yalıtım",
+    "slug": "izolasyon-yalitim"
+  },
+  {
+    "id": 5,
+    "name": "Boya ve Kaplama",
+    "slug": "boya-kaplama"
+  },
+  {
+    "id": 6,
+    "name": "Elektrik Malzemeleri",
+    "slug": "elektrik-malzemeleri"
+  },
+  {
+    "id": 7,
+    "name": "Sıhhi Tesisat",
+    "slug": "sihhi-tesisat"
+  },
+  {
+    "id": 8,
+    "name": "Ahşap ve Kapı Sistemleri",
+    "slug": "ahsap-kapi"
+  },
+  {
+    "id": 9,
+    "name": "Çatı ve Kiremit",
+    "slug": "cati-kiremit"
+  },
+  {
+    "id": 10,
+    "name": "İnşaat Aletleri",
+    "slug": "insaat-aletleri"
+  }
+]

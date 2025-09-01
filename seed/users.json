@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Fatih Çolak",
+    "email": "fatih.colak@example.com",
+    "role": "admin",
+    "status": "active",
+    "createdAt": "2024-05-01T10:15:00Z",
+    "lastLogin": "2025-08-28T09:45:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Ayşe Yılmaz",
+    "email": "ayse.yilmaz@example.com",
+    "role": "moderator",
+    "status": "active",
+    "createdAt": "2024-06-12T14:30:00Z",
+    "lastLogin": "2025-08-29T18:20:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Mehmet Demir",
+    "email": "mehmet.demir@example.com",
+    "role": "user",
+    "status": "pending",
+    "createdAt": "2024-07-05T08:00:00Z",
+    "lastLogin": null
+  },
+  {
+    "id": 4,
+    "name": "Elif Kaya",
+    "email": "elif.kaya@example.com",
+    "role": "user",
+    "status": "suspended",
+    "createdAt": "2024-03-20T11:10:00Z",
+    "lastLogin": "2025-07-15T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Ahmet Çelik",
+    "email": "ahmet.celik@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-09-02T16:45:00Z",
+    "lastLogin": "2025-08-30T22:30:00Z"
+  },
+  {
+    "id": 6,
+    "name": "Fatma Arslan",
+    "email": "fatma.arslan@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-02-10T09:00:00Z",
+    "lastLogin": "2025-08-27T11:15:00Z"
+  },
+  {
+    "id": 7,
+    "name": "Murat Koç",
+    "email": "murat.koc@example.com",
+    "role": "user",
+    "status": "pending",
+    "createdAt": "2024-04-15T12:20:00Z",
+    "lastLogin": null
+  },
+  {
+    "id": 8,
+    "name": "Selin Yıldız",
+    "email": "selin.yildiz@example.com",
+    "role": "moderator",
+    "status": "active",
+    "createdAt": "2024-05-22T14:45:00Z",
+    "lastLogin": "2025-08-25T17:30:00Z"
+  },
+  {
+    "id": 9,
+    "name": "Okan Demirtaş",
+    "email": "okan.demirtas@example.com",
+    "role": "user",
+    "status": "suspended",
+    "createdAt": "2024-01-30T08:10:00Z",
+    "lastLogin": "2025-07-20T13:25:00Z"
+  },
+  {
+    "id": 10,
+    "name": "Zeynep Aksoy",
+    "email": "zeynep.aksoy@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-06-05T10:40:00Z",
+    "lastLogin": "2025-08-30T10:50:00Z"
+  },
+  {
+    "id": 11,
+    "name": "Emre Karaca",
+    "email": "emre.karaca@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-03-12T11:00:00Z",
+    "lastLogin": "2025-08-28T15:20:00Z"
+  },
+  {
+    "id": 12,
+    "name": "Seda Uçar",
+    "email": "seda.ucar@example.com",
+    "role": "moderator",
+    "status": "active",
+    "createdAt": "2024-07-18T09:30:00Z",
+    "lastLogin": "2025-08-29T08:15:00Z"
+  },
+  {
+    "id": 13,
+    "name": "Tolga Yılmaz",
+    "email": "tolga.yilmaz@example.com",
+    "role": "user",
+    "status": "pending",
+    "createdAt": "2024-08-01T12:50:00Z",
+    "lastLogin": null
+  },
+  {
+    "id": 14,
+    "name": "Buse Demir",
+    "email": "buse.demir@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-02-28T10:20:00Z",
+    "lastLogin": "2025-08-27T09:40:00Z"
+  },
+  {
+    "id": 15,
+    "name": "Barış Akın",
+    "email": "baris.akin@example.com",
+    "role": "user",
+    "status": "suspended",
+    "createdAt": "2024-01-15T13:15:00Z",
+    "lastLogin": "2025-07-18T14:30:00Z"
+  },
+  {
+    "id": 16,
+    "name": "Cansu Yıldırım",
+    "email": "cansu.yildirim@example.com",
+    "role": "moderator",
+    "status": "active",
+    "createdAt": "2024-03-22T15:10:00Z",
+    "lastLogin": "2025-08-26T16:25:00Z"
+  },
+  {
+    "id": 17,
+    "name": "Hakan Öztürk",
+    "email": "hakan.ozturk@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-04-10T09:50:00Z",
+    "lastLogin": "2025-08-30T12:00:00Z"
+  },
+  {
+    "id": 18,
+    "name": "Melis Çelik",
+    "email": "melis.celik@example.com",
+    "role": "user",
+    "status": "pending",
+    "createdAt": "2024-05-05T08:30:00Z",
+    "lastLogin": null
+  },
+  {
+    "id": 19,
+    "name": "Serkan Koç",
+    "email": "serkan.koc@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-06-25T11:20:00Z",
+    "lastLogin": "2025-08-29T17:10:00Z"
+  },
+  {
+    "id": 20,
+    "name": "Derya Yılmaz",
+    "email": "derya.yilmaz@example.com",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2024-07-15T14:40:00Z",
+    "lastLogin": "2025-08-30T09:55:00Z"
+  }
+]

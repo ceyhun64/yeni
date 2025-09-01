@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { AuroraBackground } from "../io/aurora-background";
+import { AuroraBackground } from "../../io/aurora-background";
 
 export default function Request() {
   return (

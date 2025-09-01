@@ -2,8 +2,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Truck, HandCoins, Building2 } from "lucide-react"; // 🔥 İkonlar
-import { EtheralShadow } from "../io/etheral-shadow";
-import { GradientText } from "../io/gradient-text";
+import { EtheralShadow } from "../../io/etheral-shadow";
+import { GradientText } from "../../io/gradient-text";
 
 export default function HeroSearch() {
   return (
@@ -23,10 +23,10 @@ export default function HeroSearch() {
       {/* İçerik */}
       <div className="relative z-10 w-full max-w-5xl text-center">
         <h1 className="text-3xl sm:text-5xl font-extrabold text-black leading-tight mb-4">
-          İnşaat Malzemelerinde <br />
+          TEMELDEN, ZİRVEYE <br />
           <GradientText
             className="text-5xl font-bold font-sans"
-            text="Sonsuz Seçenek"
+            text="İNŞAAT ; PROJE, HİZMET VE TEDARİK AĞI"
             neon={false}
           />
         </h1>

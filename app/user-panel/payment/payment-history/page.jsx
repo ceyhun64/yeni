@@ -1,13 +1,13 @@
 import React from "react";
-import ProductDetail from "@/components/modules/product/productDetail";
+import PaymentHistory from "@/components/modules/user-panel/payment/paymentHistory";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
-export default function Detail() {
+export default function PaymentHistoryPage() {
   return (
     <div>
       <Navbar />
-      <ProductDetail />
+      <PaymentHistory />
       <Footer />
     </div>
   );

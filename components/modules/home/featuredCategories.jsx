@@ -18,8 +18,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const FeaturedCategories = () => {
   return (
-    <section className="py-10 px-30">
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+    <section className="py-20 px-30">
+      <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 mb-4">
         Öne Çıkan Kategoriler
       </h2>
       <div className="container">

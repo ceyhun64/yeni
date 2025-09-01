@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
@@ -6,9 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 export default function ProductFilter() {
+  const [priceRange, setPriceRange] = useState([0, 2000]);
+
   return (
     <aside>
-      {/* Filtre Kartı */}
       <Card className="shadow-sm border border-gray-100 rounded-2xl p-4">
         <CardContent>
           {/* Kategoriler */}
@@ -41,6 +42,7 @@ export default function ProductFilter() {
           </div>
 
           <Separator className="my-6" />
+
           {/* Cinsiyet */}
           <h2 className="text-lg font-semibold mb-4">Cinsiyet</h2>
           <div className="space-y-3">
@@ -66,7 +68,7 @@ export default function ProductFilter() {
 
           <Separator className="my-6" />
 
-          {/* Sadece */}
+          {/* Diğer filtreler */}
           <div className="space-y-3">
             <div className="flex items-center space-x-3">
               <Checkbox id="kargo" />
@@ -114,15 +116,27 @@ export default function ProductFilter() {
           {/* Fiyat Aralığı */}
           <h2 className="text-lg font-semibold mb-4">Fiyat Aralığı</h2>
           <Slider
-            defaultValue={[699, 900]}
-            max={1000}
+            value={priceRange}
+            max={2000}
             step={1}
             className="w-full"
+            onValueChange={(value) => setPriceRange(value)}
           />
           <div className="flex justify-between mt-2 text-sm text-gray-500">
-            <span>699.00 TL</span>
-            <span>900.00 TL</span>
+            <span>
+              {priceRange[0].toLocaleString("tr-TR", {
+                style: "currency",
+                currency: "TRY",
+              })}
+            </span>
+            <span>
+              {priceRange[1].toLocaleString("tr-TR", {
+                style: "currency",
+                currency: "TRY",
+              })}
+            </span>
           </div>
+
           <Button className="mt-5 w-full font-semibold bg-black text-white hover:bg-gray-900">
             Fiyatları Filtrele
           </Button>

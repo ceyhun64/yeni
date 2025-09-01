@@ -24,7 +24,7 @@ const SocialMedia = () => (
         {icons.map(({ Icon, name }, index) => (
           <MarqueeItem
             key={index}
-            className="h-64 w-64 flex items-center justify-center"
+            className="h-16 w-64 flex items-center justify-center"
           >
             <Icon className="w-8 h-8 text-gray-700 hover:text-[#ce6530] transition-colors" />
             <span className="sr-only">{name}</span>
@@ -34,7 +34,7 @@ const SocialMedia = () => (
         {icons.map(({ Icon, name }, index) => (
           <MarqueeItem
             key={icons.length + index}
-            className="h-64 w-64 flex items-center justify-center "
+            className="h-40 w-64 flex items-center justify-center "
           >
             <Icon className="w-8 h-8 text-gray-700 hover:text-[#ce6530] transition-colors" />
             <span className="sr-only">{name}</span>
