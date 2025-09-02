@@ -47,7 +47,7 @@ const defaultLegalLinks = [
 export default function Footer({
   logo = {
     url: "https://www.firmaniz.com",
-    src: "/logo/logo.jpeg",
+    src: "/logo/logo.jpg",
     alt: "Firma Logo",
     title: "İnşaat Malzemeleri",
   },
@@ -58,7 +58,7 @@ export default function Footer({
   legalLinks = defaultLegalLinks,
 }) {
   return (
-    <section className="border-t py-10 px-30">
+    <section className="border-t py-10 px-30 bg-gradient-to-t from-gray-300 to-white">
       <div className="container mx-auto">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           {/* Sol taraf */}
@@ -122,6 +122,19 @@ export default function Footer({
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Yeni alt kısım */}
+        <div className="mt-6 border-t pt-4 text-center text-sm text-gray-700">
+          Developed by{" "}
+          <a
+            href="https://wa.me/905541496377"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-700 font-semibold hover:underline"
+          >
+            Ceyhun Türkmen
+          </a>
         </div>
       </div>
     </section>

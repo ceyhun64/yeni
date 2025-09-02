@@ -37,7 +37,7 @@ export default function LoginForm() {
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br ">
       <Card className="w-[350px] p-6 shadow-md rounded-2xl">
         <CardHeader className="flex flex-col items-center space-y-4">
-          <Image src="/logo/logo.jpeg" alt="Logo" width={80} height={80} />
+          <Image src="/logo/logo.jpg" alt="Logo" width={80} height={80} />
           <CardTitle className="text-2xl font-bold tracking-tight">
             Yönetici Girişi
           </CardTitle>

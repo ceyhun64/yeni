@@ -26,7 +26,7 @@ export default function MyRequests() {
   };
 
   return (
-    <div className="flex px-30 min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-gray-50">
       {/* Sol sidebar */}
       <div className="w-64">
         <UserSideBar />

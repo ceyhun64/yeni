@@ -25,16 +25,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
+import { GradientText } from "../io/gradient-text";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-30 py-2 border-b ">
+    <nav className="flex items-center justify-between px-30 py-2 border-b bg-gradient-to-b from-gray-200  to-white">
       {/* Logo */}
       <div className="text-xl text-bold text-serif ">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo/logo.jpeg" alt="logo" width={30} height={30} />
+          <Image src="/logo/logo.jpg" alt="logo" width={30} height={30} />
           <h2 className="text-2xl font-serif font-bold text-slate-600">
-            inşaat
+            <GradientText
+              className=" font-bold font-sans"
+              text="inşaat"
+              neon={false}
+            />
           </h2>
         </Link>
       </div>
@@ -44,7 +49,7 @@ export default function Navbar() {
         <NavigationMenuList>
           {/* ✅ En sola İş Havuzu alanı */}
           <NavigationMenuItem>
-            <Link href="/ishavuzu">
+            <Link href="/jobpool">
               <Button variant="ghost">İş Havuzu</Button>
             </Link>
           </NavigationMenuItem>
@@ -105,7 +110,7 @@ export default function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuItem asChild>
-                  <Link href="/showroom/teklifal">Malzemeler</Link>
+                  <Link href="/products">Malzemeler</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <Link href="/showroom/tamamlanan-projeler">

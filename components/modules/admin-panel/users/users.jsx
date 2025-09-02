@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/pagination";
 export default function UsersPage() {
   const [currentPage, setCurrentPage] = useState(1);
-  const usersPerPage = 14;
+  const usersPerPage = 15;
 
   // Pagination hesaplama
   const indexOfLastUser = currentPage * usersPerPage;

@@ -6,9 +6,7 @@ import Footer from "@/components/layout/footer";
 export default function User() {
   return (
     <div>
-      <Navbar />
       <UserPanel />
-      <Footer />
     </div>
   );
 }

@@ -36,7 +36,7 @@ export default function Notifications() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 px-30">
+    <div className="flex min-h-screen bg-gray-50 ">
       <div className="w-64 border-r border-gray-200">
         <UserSideBar />
       </div>

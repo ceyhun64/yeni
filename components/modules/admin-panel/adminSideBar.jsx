@@ -8,8 +8,6 @@ import {
   ChevronRight,
   Users,
   Settings,
-  BarChart,
-  FileText,
   ClipboardList,
   UserCog,
   LogOut,
@@ -33,28 +31,28 @@ const adminMenuItems = [
     icon: <Layers className="w-4 h-4" />,
     sub: [
       {
-        url: "/admin/panel/requests",
+        url: "/admin/panel/request-offers/requests",
         label: "Gelen Taleplerim",
         icon: <Layers className="w-4 h-4" />,
       },
       {
-        url: "/admin/panel/quotes",
+        url: "/admin/panel/request-offers/offers",
         label: "Tekliflerim",
         icon: <PlusSquare className="w-4 h-4" />,
       },
     ],
   },
   {
-    title: "Sipariş Yönetimi",
+    title: "Siparişler & Faturalar",
     icon: <ShoppingCart className="w-4 h-4" />,
     sub: [
       {
-        url: "/admin/panel/orders",
+        url: "/admin/panel/order-invoices/orders",
         label: "Siparişlerim",
         icon: <ClipboardList className="w-4 h-4" />,
       },
       {
-        url: "/admin/panel/invoices",
+        url: "/admin/panel/order-invoices/invoices",
         label: "Faturalar",
         icon: <DollarSign className="w-4 h-4" />,
       },
@@ -85,20 +83,11 @@ const adminMenuItems = [
         label: "Kategoriler",
         icon: <Layers className="w-4 h-4" />,
       },
-      {
-        url: "/admin/panel/categories/create",
-        label: "Kategori Ekle",
-        icon: <PlusSquare className="w-4 h-4" />,
-      },
+
       {
         url: "/admin/panel/categories/sub",
         label: "Alt Kategoriler",
         icon: <Sliders className="w-4 h-4" />,
-      },
-      {
-        url: "/admin/panel/categories/sub/create",
-        label: "Alt Kategori Ekle",
-        icon: <PlusSquare className="w-4 h-4" />,
       },
     ],
   },
@@ -110,22 +99,6 @@ const adminMenuItems = [
         url: "/admin/panel/users",
         label: "Tüm Kullanıcılar",
         icon: <UserCog className="w-4 h-4" />,
-      },
-    ],
-  },
-  {
-    title: "Raporlar",
-    icon: <BarChart className="w-4 h-4" />,
-    sub: [
-      {
-        url: "/admin/panel/reports/sales",
-        label: "Satış Raporları",
-        icon: <FileText className="w-4 h-4" />,
-      },
-      {
-        url: "/admin/panel/reports/products",
-        label: "Ürün Raporları",
-        icon: <FileText className="w-4 h-4" />,
       },
     ],
   },

@@ -42,7 +42,7 @@ export default function Return() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 px-30">
+    <div className="flex min-h-screen bg-gray-50 ">
       {/* Sol Menü */}
       <div className="w-64">
         <UserSideBar />

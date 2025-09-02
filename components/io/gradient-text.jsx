@@ -1,19 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion"; // motion/react değil, framer-motion
 import { cn } from "@/lib/utils";
 
 function GradientText({
   text,
   className,
-  gradient = "linear-gradient(90deg, #ce6530 0%, #b45a56 100%)",
-  neon = true,
+  gradient = "linear-gradient(90deg, #fb923c 0%, #f97316 20%, #f43f5e 50%, #f97316 80%, #fb923c 100%)",
+  neon = false,
   transition = { duration: 3, repeat: Infinity, ease: "linear" },
   ...props
 }) {
   const baseStyle = {
-    color: "transparent",
     backgroundImage: gradient,
   };
 
