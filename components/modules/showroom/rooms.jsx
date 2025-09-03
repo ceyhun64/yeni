@@ -12,6 +12,13 @@ import {
   Plus,
   Search,
 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -103,17 +110,18 @@ export default function Rooms() {
               />
             </div>
 
-            <select
-              value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              className="border rounded-md px-3 py-2"
-            >
-              {STYLES.map((s) => (
-                <option key={s.value} value={s.value}>
-                  {s.label}
-                </option>
-              ))}
-            </select>
+            <Select value={style} onValueChange={setStyle}>
+              <SelectTrigger className="border rounded-md px-3 py-2">
+                <SelectValue placeholder="Select a style" />
+              </SelectTrigger>
+              <SelectContent>
+                {STYLES.map((s) => (
+                  <SelectItem key={s.value} value={s.value}>
+                    {s.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </motion.header>
 
@@ -220,7 +228,9 @@ export default function Rooms() {
                   <Button
                     variant="ghost"
                     className="gap-2"
-                    onClick={() => router.push(`/showroom/rooms/${room.id}/get-an-offer`)}
+                    onClick={() =>
+                      router.push(`/showroom/rooms/${room.id}/get-an-offer`)
+                    }
                   >
                     <Plus className="h-4 w-4" /> Detaylar
                   </Button>
