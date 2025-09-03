@@ -21,14 +21,18 @@ export default function HeroSearch() {
 
       {/* İçerik */}
       <div className="relative z-10 w-full max-w-5xl text-center">
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-black leading-tight mb-4 font-sans">
-          TEMELDEN, ZİRVEYE <br />
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-800 leading-tight mb-4 font-sans">
+          İNŞAAT <br />
           <GradientText
-            className="text-5xl "
-            text="İNŞAAT ; PROJE, HİZMET VE TEDARİK AĞI"
+            className="text-5xl"
+            text="PROJE, HİZMET VE TEDARİK AĞI"
             neon={false}
           />
+          <br />
+          TEMELDEN{" "}
+          <span className="birthstone-regular text-7xl">ZİRVEYE!</span>
         </h1>
+
         <p className="text-lg sm:text-xl text-gray-900 mb-8 max-w-3xl mx-auto">
           Demirden betona, seramikten elektrik malzemelerine kadar tüm
           ihtiyaçlarınız için doğru adres. Uygun fiyat, hızlı teslimat ve geniş
@@ -40,7 +44,7 @@ export default function HeroSearch() {
           <form className="flex w-full overflow-hidden rounded-full border border-orange-400 focus-within:ring-2 focus-within:ring-orange-500 transition">
             <Input
               type="text"
-              placeholder="İstediğin ürünü bul..."
+              placeholder=" İSTEDİĞİN HİZMETİ VE MALZEMEYİ SEÇ TEKLİF AL..."
               className="flex-1 px-6 py-4 text-gray-700 border-0 focus:outline-none"
             />
             <Button

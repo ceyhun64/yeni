@@ -61,7 +61,7 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
               <DropdownMenuItem asChild>
-                <Link href="/showroom/teklifal">
+                <Link href="/showroom/rooms">
                   Konfor tarzını seç (Teklif Al)
                 </Link>
               </DropdownMenuItem>

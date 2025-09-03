@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Birthstone&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -153,4 +154,8 @@ button {
   cursor: pointer;
 }
 
-
+.birthstone-regular {
+  font-family: "Birthstone", cursive;
+  font-weight: 600;
+  font-style: bold;
+}

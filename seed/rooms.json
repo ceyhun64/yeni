@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Salon",
+    "style": "modern",
+    "tags": ["minimal", "açık renkler"],
+    "img": "/getAnOffer/modern.jpg",
+    "gallery": [
+      "/getAnOffer/modern.jpg",
+      "/getAnOffer/modern-2.jpg",
+      "/getAnOffer/modern-3.jpg"
+    ],
+    "sizeM2": 28,
+    "beds": 0,
+    "baths": 1,
+    "priceRange": "₺60.000 – ₺120.000",
+    "desc": "Geniş oturma alanı, doğal ışık ve sade çizgilerle modern konfor."
+  },
+  {
+    "id": 2,
+    "title": "İskandinav Yatak Odası",
+    "style": "scandinavian",
+    "tags": ["ahşap", "pastel"],
+    "img": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "/getAnOffer/scandinav.jpg",
+      "/getAnOffer/scandinav2.jpg"
+    ],
+    "sizeM2": 16,
+    "beds": 1,
+    "baths": 1,
+    "priceRange": "₺45.000 – ₺90.000",
+    "desc": "Sıcak ahşap dokular ve yumuşak tonlarla huzurlu bir atmosfer."
+  },
+  {
+    "id": 3,
+    "title": "Endüstriyel Mutfak",
+    "style": "industrial",
+    "tags": ["metal", "beton"],
+    "img": "/getAnOffer/industrial.jpg",
+    "gallery": [
+      "/getAnOffer/industrial.jpg",
+      "/getAnOffer/industrial-2.jpg",
+      "/getAnOffer/industrial-3.jpg"
+    ],
+    "sizeM2": 14,
+    "beds": 0,
+    "baths": 1,
+    "priceRange": "₺70.000 – ₺140.000",
+    "desc": "Metalik yüzeyler ve koyu paletle güçlü bir mutfak tasarımı."
+  },
+  {
+    "id": 4,
+    "title": "Bohem Oturma Odası",
+    "style": "bohemian",
+    "tags": ["dokulu", "renkli"],
+    "img": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ],
+    "sizeM2": 24,
+    "beds": 0,
+    "baths": 1,
+    "priceRange": "₺50.000 – ₺110.000",
+    "desc": "Katmanlı tekstiller ve bitkilerle sıcak, samimi bir alan."
+  },
+  {
+    "id": 5,
+    "title": "Wabi-Sabi Çalışma Odası",
+    "style": "japanese",
+    "tags": ["doğal", "sade"],
+    "img": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ],
+    "sizeM2": 12,
+    "beds": 0,
+    "baths": 0,
+    "priceRange": "₺40.000 – ₺80.000",
+    "desc": "Doğal dokular ve yalınlıkla odaklanmayı destekleyen çalışma alanı."
+  },
+  {
+    "id": 6,
+    "title": "Neşeli Çocuk Odası",
+    "style": "kids",
+    "tags": ["canlı", "fonksiyonel"],
+    "img": "/getAnOffer/children.webp",
+    "gallery": [
+      "/getAnOffer/children.webp",
+      "/getAnOffer/children-2.webp",
+      "/getAnOffer/children-3.webp"
+    ],
+    "sizeM2": 13,
+    "beds": 1,
+    "baths": 1,
+    "priceRange": "₺35.000 – ₺75.000",
+    "desc": "Oyun ve düzeni bir araya getiren renkli bir dünya."
+  },
+  {
+    "id": 7,
+    "title": "Akdeniz Banyo",
+    "style": "mediterranean",
+    "tags": ["seramik", "mavi tonlar"],
+    "img": "/getAnOffer/mediterranean.webp",
+    "gallery": [
+      "/getAnOffer/mediterranean.webp",
+      "/getAnOffer/mediterranean-2.webp",
+      "/getAnOffer/mediterranean-3.webp"
+    ],
+    "sizeM2": 9,
+    "beds": 0,
+    "baths": 1,
+    "priceRange": "₺30.000 – ₺65.000",
+    "desc": "Serin mavi tonlar ve desenli seramiklerle ferah bir banyo."
+  },
+  {
+    "id": 8,
+    "title": "Klasik Oturma Odası",
+    "style": "classic",
+    "tags": ["şık", "zamanız"],
+    "img": "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      "https://images.unsplash.com/photo-1536376072261-38c75010e6c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+    ],
+    "sizeM2": 26,
+    "beds": 0,
+    "baths": 1,
+    "priceRange": "₺80.000 – ₺160.000",
+    "desc": "İnce detaylar ve asil dokularla zarif bir yaşam alanı."
+  }
+]
