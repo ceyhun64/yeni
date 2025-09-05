@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, Suspense } from "react";
 import {
   Card,
   CardContent,
@@ -30,13 +30,14 @@ import {
   User,
   MapPin,
   ArrowLeft,
-  ArrowRight
-} from "lucide-react"
+  ArrowRight,
+} from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import cities from "@/seed/cities.json";
 import districts from "@/seed/districts.json";
 
-export default function OrderPage() {
+// --- Asıl içerik componenti ---
+function OrderContent() {
   const searchParams = useSearchParams();
   const steps = ["Adres Bilgileri", "Ödeme Bilgileri", "Onay Ver"];
   const [currentStep, setCurrentStep] = useState(0);
@@ -74,8 +75,9 @@ export default function OrderPage() {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
   };
 
-  if (!room)
+  if (!room) {
     return <div className="p-10 text-center text-lg">Oda bulunamadı.</div>;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-6">
@@ -217,14 +219,17 @@ export default function OrderPage() {
                     {/* İlçe */}
                     <div className="grid gap-2">
                       <Label htmlFor="district">İlçe</Label>
-                      <Select 
+                      <Select
                         value={formData.district}
                         onValueChange={(value) =>
                           setFormData({ ...formData, district: value })
                         }
                         disabled={!formData.city}
                       >
-                        <SelectTrigger id="district" className="rounded-xl w-full">
+                        <SelectTrigger
+                          id="district"
+                          className="rounded-xl w-full"
+                        >
                           <SelectValue placeholder="Seçiniz" />
                         </SelectTrigger>
                         <SelectContent>
@@ -446,5 +451,14 @@ export default function OrderPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// --- Suspense Wrapper ---
+export default function OrderPage() {
+  return (
+    <Suspense fallback={<div className="p-10 text-center">Yükleniyor...</div>}>
+      <OrderContent />
+    </Suspense>
   );
 }
