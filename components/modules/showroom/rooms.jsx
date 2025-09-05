@@ -88,8 +88,9 @@ export default function Rooms() {
           className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
         >
           <div>
-            <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
+            <h1 className="flex items-center gap-2 text-2xl md:text-4xl font-bold tracking-tight text-gray-900">
               Oda Tasarımları
+
             </h1>
             <p className="text-muted-foreground mt-2 max-w-2xl">
               Beğendiğiniz tasarım için hızlıca{" "}
@@ -206,13 +207,6 @@ export default function Rooms() {
                       <Bath className="h-4 w-4" />
                       <span>{room.baths}</span>
                     </div>
-                  </div>
-
-                  <div className="mt-3 text-sm">
-                    <span className="text-muted-foreground">
-                      Tahmini Bütçe:{" "}
-                    </span>
-                    <span className="font-medium">{room.priceRange}</span>
                   </div>
                 </CardContent>
 

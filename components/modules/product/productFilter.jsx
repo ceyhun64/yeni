@@ -1,143 +1,141 @@
+"use client";
 import React, { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Filter } from "lucide-react";
 
 export default function ProductFilter() {
   const [priceRange, setPriceRange] = useState([0, 2000]);
 
   return (
-    <aside>
-      <Card className="shadow-sm border border-gray-100 rounded-2xl p-4">
-        <CardContent>
-          {/* Kategoriler */}
-          <h2 className="text-lg font-semibold mb-4">Kategoriler</h2>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3">
-              <Checkbox id="pantolon" />
-              <label htmlFor="pantolon" className="text-sm font-medium">
-                Pantolon
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="gomlek" />
-              <label htmlFor="gomlek" className="text-sm font-medium">
-                Gömlek
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="tisort" />
-              <label htmlFor="tisort" className="text-sm font-medium">
-                T-Shirt
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="ceket" />
-              <label htmlFor="ceket" className="text-sm font-medium">
-                Ceket
-              </label>
-            </div>
+    <aside className="w-full">
+      <Card className="shadow-lg border border-gray-100 rounded-3xl p-6 bg-white">
+        <CardContent className="p-0 space-y-6">
+          {/* Başlık */}
+          <div className="flex items-center gap-2 mb-4">
+            <Filter className="w-5 h-5 text-gray-700" />
+            <h2 className="text-xl font-semibold text-gray-800">
+              Ürün Filtreleri
+            </h2>
           </div>
 
-          <Separator className="my-6" />
+          {/* Accordion Yapısı */}
+          <Accordion type="multiple" className="space-y-4">
+            {/* Kategoriler */}
+            <AccordionItem value="kategori">
+              <AccordionTrigger className="text-base font-medium text-gray-700">
+                Kategoriler
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid gap-2 mt-2">
+                  {["Pantolon", "Gömlek", "T-Shirt", "Ceket"].map((item) => (
+                    <label
+                      key={item}
+                      htmlFor={item.toLowerCase()}
+                      className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
+                    >
+                      <Checkbox id={item.toLowerCase()} />
+                      <span className="text-sm text-gray-600">{item}</span>
+                    </label>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
 
-          {/* Cinsiyet */}
-          <h2 className="text-lg font-semibold mb-4">Cinsiyet</h2>
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3">
-              <Checkbox id="kadin" />
-              <label htmlFor="kadin" className="text-sm font-medium">
-                Kadın
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="erkek" />
-              <label htmlFor="erkek" className="text-sm font-medium">
-                Erkek
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="unisex" />
-              <label htmlFor="unisex" className="text-sm font-medium">
-                Unisex
-              </label>
-            </div>
-          </div>
+            {/* Cinsiyet */}
+            <AccordionItem value="cinsiyet">
+              <AccordionTrigger className="text-base font-medium text-gray-700">
+                Cinsiyet
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid gap-2 mt-2">
+                  {["Kadın", "Erkek", "Unisex"].map((gender) => (
+                    <label
+                      key={gender}
+                      htmlFor={gender.toLowerCase()}
+                      className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
+                    >
+                      <Checkbox id={gender.toLowerCase()} />
+                      <span className="text-sm text-gray-600">{gender}</span>
+                    </label>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
 
-          <Separator className="my-6" />
+            {/* Özellikler */}
+            <AccordionItem value="ozellikler">
+              <AccordionTrigger className="text-base font-medium text-gray-700">
+                Özellikler
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="grid gap-2 mt-2">
+                  {[
+                    "Ücretsiz Kargo",
+                    "Yeni Gelenler",
+                    "Fırsat Ürünleri",
+                    "İndirimli Ürünler",
+                    "Taksit Seçeneği Olanlar",
+                    "Hızlı Gönderi",
+                  ].map((feature) => (
+                    <label
+                      key={feature}
+                      htmlFor={feature.toLowerCase().replace(/\s+/g, "-")}
+                      className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
+                    >
+                      <Checkbox
+                        id={feature.toLowerCase().replace(/\s+/g, "-")}
+                      />
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </label>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
 
-          {/* Diğer filtreler */}
-          <div className="space-y-3">
-            <div className="flex items-center space-x-3">
-              <Checkbox id="kargo" />
-              <label
-                htmlFor="kargo"
-                className="text-sm font-medium cursor-pointer"
-              >
-                Ücretsiz Kargo
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="yeni" />
-              <label htmlFor="yeni" className="text-sm font-medium">
-                Yeni Gelenler
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="firsat" />
-              <label htmlFor="firsat" className="text-sm font-medium">
-                Fırsat Ürünleri
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="indirimli" />
-              <label htmlFor="indirimli" className="text-sm font-medium">
-                İndirimli Ürünler
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="taksit" />
-              <label htmlFor="taksit" className="text-sm font-medium">
-                Taksit Seçeneği Olanlar
-              </label>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Checkbox id="hizli" />
-              <label htmlFor="hizli" className="text-sm font-medium">
-                Hızlı Gönderi
-              </label>
-            </div>
-          </div>
+            {/* Fiyat Aralığı */}
+            <AccordionItem value="fiyat">
+              <AccordionTrigger className="text-base font-medium text-gray-700">
+                Fiyat Aralığı
+              </AccordionTrigger>
+              <AccordionContent>
+                <div className="mt-2">
+                  <Slider
+                    value={priceRange}
+                    max={2000}
+                    step={50}
+                    className="w-full"
+                    onValueChange={(value) => setPriceRange(value)}
+                  />
+                  <div className="flex justify-between mt-2 text-sm text-gray-500">
+                    <span>
+                      {priceRange[0].toLocaleString("tr-TR", {
+                        style: "currency",
+                        currency: "TRY",
+                      })}
+                    </span>
+                    <span>
+                      {priceRange[1].toLocaleString("tr-TR", {
+                        style: "currency",
+                        currency: "TRY",
+                      })}
+                    </span>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
 
-          <Separator className="my-6" />
-
-          {/* Fiyat Aralığı */}
-          <h2 className="text-lg font-semibold mb-4">Fiyat Aralığı</h2>
-          <Slider
-            value={priceRange}
-            max={2000}
-            step={1}
-            className="w-full"
-            onValueChange={(value) => setPriceRange(value)}
-          />
-          <div className="flex justify-between mt-2 text-sm text-gray-500">
-            <span>
-              {priceRange[0].toLocaleString("tr-TR", {
-                style: "currency",
-                currency: "TRY",
-              })}
-            </span>
-            <span>
-              {priceRange[1].toLocaleString("tr-TR", {
-                style: "currency",
-                currency: "TRY",
-              })}
-            </span>
-          </div>
-
-          <Button className="mt-5 w-full font-semibold bg-black text-white hover:bg-gray-900">
+          {/* Buton */}
+          <Button className="w-full h-11 font-semibold rounded-2xl shadow-sm bg-black text-white hover:bg-gray-900 transition-all">
             Fiyatları Filtrele
           </Button>
         </CardContent>

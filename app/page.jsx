@@ -9,9 +9,11 @@ import SocialMedia from "@/components/modules/home/social-media";
 import { FeaturedCategories } from "@/components/modules/home/featuredCategories";
 import Services from "@/components/modules/home/services";
 import Subscribe from "@/components/modules/home/subscribe";
+import Scroll from "@/components/layout/scroll"; // buton componenti
+
 export default function Home() {
   return (
-    <div>
+    <div className="relative">
       <Navbar />
       <Heroes />
       <Request />
@@ -23,6 +25,9 @@ export default function Home() {
       <Gallery />
       <Subscribe />
       <Footer />
+
+      {/* Yukarı çık butonu */}
+      <Scroll />
     </div>
   );
 }

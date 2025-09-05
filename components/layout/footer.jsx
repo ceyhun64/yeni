@@ -2,6 +2,7 @@
 import React from "react";
 import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import { GradientText } from "../io/gradient-text";
+import { Separator } from "@/components/ui/separator";
 
 const defaultSections = [
   {
@@ -58,18 +59,18 @@ export default function Footer({
   legalLinks = defaultLegalLinks,
 }) {
   return (
-    <section className="border-t py-10 px-30 bg-gradient-to-t from-gray-300 to-white">
+    <section className="border-t py-10 px-5 sm:px-10 md:px-20 bg-gradient-to-t from-gray-200 via-white to-white">
       <div className="container mx-auto">
-        <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           {/* Sol taraf */}
-          <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
-            <div className="flex items-center gap-2 lg:justify-start">
+          <div className="flex flex-col gap-6 w-full lg:w-1/3">
+            <div className="flex items-center gap-2">
               <a href={logo.url}>
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   title={logo.title}
-                  className="h-8"
+                  className="h-10"
                 />
               </a>
               <h2 className="text-xl font-semibold">
@@ -79,10 +80,10 @@ export default function Footer({
                 />
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-[70%] text-sm">
+            <p className="text-muted-foreground max-w-full text-sm">
               {description}
             </p>
-            <ul className="flex items-center space-x-6 text-muted-foreground">
+            <ul className="flex flex-wrap gap-4 mt-2 text-muted-foreground">
               {socialLinks.map((social, idx) => (
                 <li key={idx} className="hover:text-primary font-medium">
                   <a href={social.href} aria-label={social.label}>
@@ -94,11 +95,11 @@ export default function Footer({
           </div>
 
           {/* Sağ taraf */}
-          <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
+          <div className="grid w-full gap-6 sm:grid-cols-2 md:grid-cols-3 lg:w-2/3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 <h3 className="mb-4 font-bold">{section.title}</h3>
-                <ul className="space-y-3 text-sm text-muted-foreground">
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
@@ -113,9 +114,11 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-4 border-t py-8 text-xs font-medium text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p className="order-2 lg:order-1">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
+        <div className="mt-8 flex flex-col gap-4 py-8 text-xs font-medium text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p className="order-2 md:order-1 text-center md:text-left">
+            {copyright}
+          </p>
+          <ul className="order-1 flex flex-wrap gap-2 justify-center md:order-2 md:flex-row">
             {legalLinks.map((link, idx) => (
               <li key={idx} className="hover:text-primary">
                 <a href={link.href}>{link.name}</a>
@@ -124,8 +127,11 @@ export default function Footer({
           </ul>
         </div>
 
+        {/* Alt çizgi */}
+        <div className="border-t border-gray-400 mt-6"></div>
+
         {/* Yeni alt kısım */}
-        <div className="mt-6 border-t pt-4 text-center text-sm text-gray-700">
+        <div className="mt-6 pt-4 text-center text-sm text-gray-700">
           Developed by{" "}
           <a
             href="https://wa.me/905541496377"
@@ -133,7 +139,7 @@ export default function Footer({
             rel="noopener noreferrer"
             className="text-orange-700 font-semibold hover:underline"
           >
-            Ceyhun Türkmen
+            .jhunDev
           </a>
         </div>
       </div>

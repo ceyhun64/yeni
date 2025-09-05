@@ -1,11 +1,19 @@
 "use client";
+
 import React, { useState } from "react";
 import UserSideBar from "../userSideBar";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Security() {
   const [formData, setFormData] = useState({
@@ -13,20 +21,27 @@ export default function Security() {
     newPassword: "",
     confirmPassword: "",
   });
+  const [showPassword, setShowPassword] = useState({
+    current: false,
+    new: false,
+    confirm: false,
+  });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const toggleShow = (field) => {
+    setShowPassword({ ...showPassword, [field]: !showPassword[field] });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (formData.newPassword !== formData.confirmPassword) {
       alert("Yeni şifre ve tekrar alanı eşleşmeli!");
       return;
     }
 
-    // Burada API çağrısı ile şifre güncelleme yapılabilir
     console.log("Şifre güncelleme formu:", formData);
   };
 
@@ -37,53 +52,102 @@ export default function Security() {
         <UserSideBar />
       </div>
 
-      {/* Sağ taraf: Şifre güncelleme */}
+      {/* Sağ içerik */}
       <div className="flex-1 p-8">
-        <h1 className="text-2xl font-bold mb-6">Şifre Güncelle</h1>
-        <Card className="p-6 space-y-4">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col space-y-1">
-              <Label htmlFor="currentPassword">Mevcut Şifre</Label>
-              <Input
-                id="currentPassword"
-                name="currentPassword"
-                type="password"
-                value={formData.currentPassword}
-                onChange={handleChange}
-                placeholder="Mevcut şifrenizi girin"
-              />
-            </div>
+        <Card className="rounded-3xl shadow-md max-w-xl mx-auto">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold">Şifre Güncelle</CardTitle>
+            <CardDescription>
+              Hesabınızın güvenliği için şifrenizi buradan değiştirebilirsiniz.
+            </CardDescription>
+          </CardHeader>
+          <Separator className="my-4" />
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/** Mevcut Şifre */}
+              <div className="relative flex flex-col">
+                <Label className={"mb-2"} htmlFor="currentPassword">Mevcut Şifre</Label>
+                <Input
+                  id="currentPassword"
+                  name="currentPassword"
+                  type={showPassword.current ? "text" : "password"}
+                  value={formData.currentPassword}
+                  onChange={handleChange}
+                  placeholder="Mevcut şifrenizi girin"
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => toggleShow("current")}
+                  className="absolute right-2 top-5.5 p-1 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword.current ? (
+                    <EyeOff size={16} />
+                  ) : (
+                    <Eye size={16} />
+                  )}
+                </Button>
+              </div>
 
-            <div className="flex flex-col space-y-1">
-              <Label htmlFor="newPassword">Yeni Şifre</Label>
-              <Input
-                id="newPassword"
-                name="newPassword"
-                type="password"
-                value={formData.newPassword}
-                onChange={handleChange}
-                placeholder="Yeni şifre"
-              />
-            </div>
+              {/** Yeni Şifre */}
+              <div className="relative flex flex-col">
+                <Label  className={"mb-2"} htmlFor="newPassword">Yeni Şifre</Label>
+                <Input
+                  id="newPassword"
+                  name="newPassword"
+                  type={showPassword.new ? "text" : "password"}
+                  value={formData.newPassword}
+                  onChange={handleChange}
+                  placeholder="Yeni şifre"
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => toggleShow("new")}
+                  className="absolute right-2 top-5.5 p-1 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword.new ? <EyeOff size={16} /> : <Eye size={16} />}
+                </Button>
+              </div>
 
-            <div className="flex flex-col space-y-1">
-              <Label htmlFor="confirmPassword">Yeni Şifre (Tekrar)</Label>
-              <Input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                value={formData.confirmPassword}
-                onChange={handleChange}
-                placeholder="Yeni şifreyi tekrar girin"
-              />
-            </div>
+              {/** Yeni Şifre (Tekrar) */}
+              <div className="relative flex flex-col">
+                <Label  className={"mb-2"} htmlFor="confirmPassword">Yeni Şifre (Tekrar)</Label>
+                <Input
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  type={showPassword.confirm ? "text" : "password"}
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  placeholder="Yeni şifreyi tekrar girin"
+                />
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => toggleShow("confirm")}
+                  className="absolute right-2 top-5.5 p-1 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword.confirm ? (
+                    <EyeOff size={16} />
+                  ) : (
+                    <Eye size={16} />
+                  )}
+                </Button>
+              </div>
 
-            <Separator className="my-4" />
+              <Separator className="my-4" />
 
-            <Button type="submit" className="w-full">
-              Kaydet
-            </Button>
-          </form>
+              <Button
+                type="submit"
+                className=" bg-orange-500 hover:bg-orange-600 text-white"
+              >
+                Kaydet
+              </Button>
+            </form>
+          </CardContent>
         </Card>
       </div>
     </div>

@@ -40,7 +40,7 @@ export default function GetAnOffer() {
   const [length, setLength] = useState("");
   const [height, setHeight] = useState("");
   const [counter, setCounter] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Buraya ref ekliyoruz
@@ -138,7 +138,7 @@ export default function GetAnOffer() {
               </div>
 
               {/* Özellikler */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
                 <Feature
                   icon={<Ruler />}
                   label="Alan"
@@ -146,11 +146,11 @@ export default function GetAnOffer() {
                 />
                 <Feature icon={<Bed />} label="Yatak" value={room.beds} />
                 <Feature icon={<Bath />} label="Banyo" value={room.baths} />
-                <Feature
+                {/* <Feature
                   icon={<Wallet />}
                   label="Bütçe"
                   value={room.priceRange}
-                />
+                /> */}
               </div>
 
               <Separator />
@@ -248,15 +248,16 @@ export default function GetAnOffer() {
 
               <Button
                 onClick={calculatePrice}
-                className="w-full mt-2 flex items-center justify-center gap-2 bg-primary text-white hover:bg-primary/90"
+                className="w-full mt-2 flex items-center justify-center gap-2 bg-orange-500 text-white hover:bg-orange-500"
               >
-                <Wallet className="w-4 h-4" /> Teklif Al
+                <Wallet className="w-4 h-4" /> Hemen Hesapla
               </Button>
 
               <div className="text-center text-sm text-gray-500 mt-2">
                 Ölçülerinizi girdikten sonra size özel teklif verilecektir.
               </div>
             </CardContent>
+            <Separator />
             {/* Fiyat kartına ref ekliyoruz */}
             <Card
               ref={priceRef}
@@ -269,8 +270,26 @@ export default function GetAnOffer() {
               <Button
                 variant="outline"
                 className="w-full mt-3"
-                onClick={() => router.push("/checkout")}
-                disabled={price == null}
+                onClick={() => {
+                  const roomData = {
+                    title: room.title,
+                    desc: room.desc,
+                    style: room.style || "",
+                    tags: room.tags || [],
+                    gallery: room.gallery || [],
+                  };
+
+                  const query = new URLSearchParams({
+                    width,
+                    length,
+                    height,
+                    counter,
+                    room: JSON.stringify(roomData), // JSON string olarak gönderiyoruz
+                  }).toString();
+
+                  router.push(`/order?${query}`);
+                }}
+                disabled={price === null} // price null ise pasif
               >
                 <ShoppingCart className="w-4 h-4" /> Siparişe Başla
               </Button>

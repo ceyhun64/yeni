@@ -7,12 +7,12 @@ import { GradientText } from "../../io/gradient-text";
 
 export default function HeroSearch() {
   return (
-    <section className="relative h-[800px] flex items-center justify-center sm:px-8 lg:px-16 px-6 overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-16 flex items-center justify-center sm:px-8 lg:px-16 px-6 overflow-hidden">
       {/* Arka plan */}
-      <div className="absolute inset-0 py-10 px-30 rounded-2xl">
+      <div className="absolute inset-0 py-8 sm:py-12 lg:py-4 px-4 sm:px-8 lg:px-12 rounded-none sm:rounded-2xl">
         <EtheralShadow
           color="rgba(128, 128, 128, 1)"
-          animation={{ scale: 100, speed: 90 }}
+          animation={{ scale: 60, speed: 90 }} // mobil için daha küçük
           noise={{ opacity: 1, scale: 1.2 }}
           sizing="fill"
         />
@@ -29,8 +29,11 @@ export default function HeroSearch() {
             neon={false}
           />
           <br />
-          TEMELDEN{" "}
-          <span className="birthstone-regular text-7xl">ZİRVEYE!</span>
+          TEMELDEN
+          {" "}
+          <span className="birthstone-regular text-4xl sm:text-6xl lg:text-7xl transform -rotate-7 origin-bottom-left inline-block">
+            ZİRVEYE!
+          </span>
         </h1>
 
         <p className="text-lg sm:text-xl text-gray-900 mb-8 max-w-3xl mx-auto">
@@ -41,7 +44,7 @@ export default function HeroSearch() {
 
         {/* Arama */}
         <div className="bg-white rounded-2xl p-6 sm:p-8 mb-6 shadow-lg">
-          <form className="flex w-full overflow-hidden rounded-full border border-orange-400 focus-within:ring-2 focus-within:ring-orange-500 transition">
+          <form className="flex flex-col sm:flex-row w-full overflow-hidden rounded-full border border-orange-400 focus-within:ring-2 focus-within:ring-orange-500 transition">
             <Input
               type="text"
               placeholder=" İSTEDİĞİN HİZMETİ VE MALZEMEYİ SEÇ TEKLİF AL..."
@@ -49,7 +52,7 @@ export default function HeroSearch() {
             />
             <Button
               type="submit"
-              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 rounded-none"
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-4 sm:rounded-none  sm:rounded-b-none"
             >
               Ara
             </Button>
@@ -59,7 +62,7 @@ export default function HeroSearch() {
         {/* CTA */}
         <Link
           href="/products"
-          className="inline-block mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 transition-transform hover:scale-105 shadow-lg"
+          className="inline-block w-full sm:w-auto mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold hover:from-orange-600 hover:to-red-600 transition-transform hover:scale-105 shadow-lg text-center"
         >
           Hemen Keşfet
         </Link>

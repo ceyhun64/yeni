@@ -32,22 +32,23 @@ export default function ProductList() {
   );
 
   return (
-    <div className="flex p-6 max-w-7xl mx-auto">
+    <div className="flex p-6 max-w-7xl mx-auto gap-8">
       {/* Sol Filtre */}
-      <aside className="w-1/4 pr-6">
+      <aside className="w-1/4">
         <div className="sticky top-6">
           <ProductFilter />
         </div>
       </aside>
 
       {/* Sağ Ürün Listesi */}
-      <main className="w-3/4 pl-8">
-        <div className="flex justify-between items-center mb-6">
+      <main className="w-3/4 flex flex-col gap-6">
+        {/* Üst Kontroller */}
+        <div className="flex justify-between items-center">
           <Select defaultValue="new">
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-[180px] border border-gray-300 rounded-md shadow-sm hover:shadow-md transition">
               <SelectValue placeholder="Sıralama" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="rounded-md shadow-lg border border-gray-200">
               <SelectItem value="new">Yeni Ürünler</SelectItem>
               <SelectItem value="az">A-Z</SelectItem>
               <SelectItem value="most-viewed">En Çok İncelenenler</SelectItem>
@@ -55,50 +56,55 @@ export default function ProductList() {
           </Select>
 
           {/* Grid Seçimi */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             {["grid-cols-2", "grid-cols-3", "grid-cols-4"].map((cols, idx) => (
-              <div
+              <button
                 key={idx}
-                className={`grid ${cols} gap-1 p-1 border rounded cursor-pointer hover:bg-gray-100 ${
-                  gridCols === cols ? "bg-gray-200" : ""
+                className={`flex gap-1 p-2 border rounded-md transition ${
+                  gridCols === cols
+                    ? "bg-gray-100 border-gray-400"
+                    : "border-gray-200 hover:bg-gray-50"
                 }`}
                 onClick={() => setGridCols(cols)}
               >
                 {Array.from({ length: parseInt(cols.split("-")[2]) }).map(
                   (_, i) => (
-                    <svg
+                    <div
                       key={i}
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M2 4h16v2H2zM2 8h16v2H2zM2 12h16v2H2z"></path>
-                    </svg>
+                      className="w-3 h-3 bg-gray-400 rounded-sm"
+                    ></div>
                   )
                 )}
-              </div>
+              </button>
             ))}
           </div>
         </div>
 
-        <div className={`grid ${gridCols} gap-4`}>
+        {/* Ürün Grid */}
+        <div className={`grid ${gridCols} gap-6`}>
           {displayedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* Shadcn/ui Pagination */}
-        <div className="flex justify-center mt-6">
-          <Pagination>
+        {/* Pagination */}
+        <div className="flex justify-center mt-4">
+          <Pagination className="flex gap-1">
             <PaginationPrevious
               onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-100 transition"
             />
-            <PaginationContent>
+            <PaginationContent className="flex gap-1">
               {Array.from({ length: totalPages }, (_, i) => (
                 <PaginationItem key={i}>
                   <PaginationLink
                     isActive={currentPage === i + 1}
                     onClick={() => setCurrentPage(i + 1)}
+                    className={`px-3 py-1 rounded-md border border-gray-300 transition ${
+                      currentPage === i + 1
+                        ? "bg-gray-100 border-gray-400"
+                        : "hover:bg-gray-50"
+                    }`}
                   >
                     {i + 1}
                   </PaginationLink>
@@ -107,6 +113,7 @@ export default function ProductList() {
             </PaginationContent>
             <PaginationNext
               onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+              className="px-3 py-1 rounded-md border border-gray-300 hover:bg-gray-100 transition"
             />
           </Pagination>
         </div>
