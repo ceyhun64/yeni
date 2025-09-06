@@ -215,7 +215,9 @@ export default function Rooms() {
                   <Button
                     className="gap-2"
                     onClick={() =>
-                      router.push(`/new-build-construction/kitchen-renovation/${room.id}/get-an-offer`)
+                      router.push(
+                        `/new-build-construction/kitchen-renovation/${room.id}/get-an-offer`
+                      )
                     }
                   >
                     <Sparkles className="h-4 w-4" /> Teklif Al
@@ -224,7 +226,9 @@ export default function Rooms() {
                     variant="ghost"
                     className="gap-2"
                     onClick={() =>
-                      router.push(`/showroom/rooms/${room.id}/get-an-offer`)
+                      router.push(
+                        `/new-build-construction/kitchen-renovation/${room.id}/get-an-offer`
+                      )
                     }
                   >
                     <Plus className="h-4 w-4" /> Detaylar

@@ -3,7 +3,6 @@ import React, { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
-  Bed,
   Bath,
   Ruler,
   Sparkles,
@@ -11,7 +10,7 @@ import {
   Filter,
   Plus,
   Search,
-  Utensils,
+  Bed,
 } from "lucide-react";
 import {
   Select,
@@ -90,8 +89,8 @@ export default function Rooms() {
         >
           <div>
             <h1 className="flex items-center gap-2 text-2xl md:text-4xl font-bold tracking-tight text-gray-900">
-              Mutfak Tasarımları
-              <Utensils className="h-8 w-8" />
+              Yatak Odası Tasarımları
+              <Bed className="h-8 w-8 text-purple-500" />
             </h1>
             <p className="text-muted-foreground mt-2 max-w-2xl">
               Beğendiğiniz tasarım için hızlıca{" "}
@@ -215,7 +214,9 @@ export default function Rooms() {
                   <Button
                     className="gap-2"
                     onClick={() =>
-                      router.push(`/showroom/rooms/${room.id}/get-an-offer`)
+                      router.push(
+                        `/new-build-construction/bedroom-renovation/${room.id}/get-an-offer`
+                      )
                     }
                   >
                     <Sparkles className="h-4 w-4" /> Teklif Al
@@ -224,7 +225,9 @@ export default function Rooms() {
                     variant="ghost"
                     className="gap-2"
                     onClick={() =>
-                      router.push(`/showroom/rooms/${room.id}/get-an-offer`)
+                      router.push(
+                        `/new-build-construction/bedroom-renovation/${room.id}/get-an-offer`
+                      )
                     }
                   >
                     <Plus className="h-4 w-4" /> Detaylar

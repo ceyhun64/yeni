@@ -102,22 +102,6 @@ const adminMenuItems = [
       },
     ],
   },
-  {
-    title: "Ayarlar",
-    icon: <Settings className="w-4 h-4" />,
-    sub: [
-      {
-        url: "/admin/panel/settings/general",
-        label: "Genel Ayarlar",
-        icon: <Settings className="w-4 h-4" />,
-      },
-      {
-        url: "/admin/panel/settings/profile",
-        label: "Profil Ayarları",
-        icon: <UserCog className="w-4 h-4" />,
-      },
-    ],
-  },
 ];
 
 export default function AdminSideBar() {
