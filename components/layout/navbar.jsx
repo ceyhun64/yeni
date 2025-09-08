@@ -24,6 +24,7 @@ import {
   Boxes,
   CheckCircle2,
   Bed,
+  Info
 } from "lucide-react";
 import {
   NavigationMenu,
@@ -76,7 +77,7 @@ export default function Navbar() {
   const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
 
   return (
-    <nav className="flex items-center justify-between px-16 py-2 border-b bg-gradient-to-b from-gray-200 via-white to-white">
+    <nav className="top-0 z-40 bg-white/80 backdrop-blur-md  sticky flex items-center justify-between px-16 py-2 border-b bg-gradient-to-b from-gray-200 via-white to-white shadow-xl">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <Link href="/" className="flex items-center gap-2">
@@ -122,7 +123,7 @@ export default function Navbar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link
-                      href="/showroom/tamamlanan-projeler"
+                      href="/showroom/completed-projects"
                       className="flex items-center gap-2"
                     >
                       <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -131,7 +132,7 @@ export default function Navbar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link
-                      href="/showroom/devam-eden-projeler"
+                      href="/showroom/ongoing-projects"
                       className="flex items-center gap-2"
                     >
                       <Layers className="h-4 w-4 text-yellow-600" />
@@ -151,14 +152,12 @@ export default function Navbar() {
                     İnşaat & Tadilat Hesaplama
                   </Button>
                 </DropdownMenuTrigger>
-
                 <DropdownMenuContent className="w-56">
                   <DropdownMenuSub>
-                    <DropdownMenuSubTrigger className="flex items-center justify-between">
-                      <Building className="h-4 w-4 text-indigo-600 mr-2" />
-                      Temelden İnşaat
+                    <DropdownMenuSubTrigger className="flex items-center gap-2">
+                      <Home className="h-4 w-4 text-teal-600" />
+                      İç Oda Tadilat
                     </DropdownMenuSubTrigger>
-
                     <DropdownMenuSubContent sideOffset={5}>
                       <DropdownMenuItem asChild>
                         <Link
@@ -169,7 +168,6 @@ export default function Navbar() {
                           Mutfak Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/entrance-renovation"
@@ -179,7 +177,6 @@ export default function Navbar() {
                           Hol-Giriş Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/kids-room-renovation"
@@ -189,7 +186,6 @@ export default function Navbar() {
                           Çocuk Odası Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/bedroom-renovation"
@@ -199,7 +195,6 @@ export default function Navbar() {
                           Yatak Odası Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/livingroom-renovation"
@@ -209,7 +204,6 @@ export default function Navbar() {
                           Oturma Odası Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/salon-renovation"
@@ -219,7 +213,6 @@ export default function Navbar() {
                           Salon Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/balcony-renovation"
@@ -229,7 +222,6 @@ export default function Navbar() {
                           Balkon Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/toilet-renovation"
@@ -239,7 +231,6 @@ export default function Navbar() {
                           Lavabo-WC Tadilat
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/bathroom-renovation"
@@ -249,7 +240,6 @@ export default function Navbar() {
                           Banyo Tadilat (Komple/Kısmi)
                         </Link>
                       </DropdownMenuItem>
-
                       <DropdownMenuItem asChild>
                         <Link
                           href="/new-build-construction/complete-renovation"
@@ -261,7 +251,6 @@ export default function Navbar() {
                       </DropdownMenuItem>
                     </DropdownMenuSubContent>
                   </DropdownMenuSub>
-
                   <DropdownMenuItem asChild>
                     <Link
                       href="/showroom/tamamlanan-projeler"
@@ -276,8 +265,8 @@ export default function Navbar() {
                       href="/showroom/devam-eden-projeler"
                       className="flex items-center gap-2"
                     >
-                      <Home className="h-4 w-4 text-teal-600" />
-                      İç Oda Tadilat
+                      <Building className="h-4 w-4 text-indigo-600" />
+                      Temelden İnşaat
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -289,42 +278,148 @@ export default function Navbar() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center gap-2">
-                    <Truck className="h-4 w-4 text-amber-600" />
+                    <Settings className="h-4 w-4 text-pink-500" />
                     Hizmetlerimiz
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-full">
                   <DropdownMenuItem asChild>
                     <Link href="/products" className="flex items-center gap-2">
-                      <Boxes className="h-4 w-4 text-purple-600" />
+                      <Package className="h-4 w-4 text-orange-500" />
                       Malzemeler
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="/showroom/tamamlanan-projeler"
-                      className="flex items-center gap-2"
-                    >
-                      <ToolCase className="h-4 w-4 text-blue-600" />
+
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="flex items-center gap-2">
+                      <Hammer className="h-4 w-4 text-red-500" />
                       Uygulama Hizmeti
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="/showroom/devam-eden-projeler"
-                      className="flex items-center gap-2"
-                    >
-                      <ClipboardList className="h-4 w-4 text-green-600" />
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent sideOffset={5}>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/application-service/housing-manufacturing"
+                          className="flex items-center gap-2"
+                        >
+                          <Home className="h-4 w-4 text-teal-500" />
+                          Konut & Toplu Konut İnşaat İmalatı
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/application-service/industrial-manufacturing"
+                          className="flex items-center gap-2"
+                        >
+                          <Building className="h-4 w-4 text-indigo-500" />
+                          Ticari & Endüstriyel İnşaat İmalatı
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/application-service/infrastructure-manufacturing"
+                          className="flex items-center gap-2"
+                        >
+                          <Layers className="h-4 w-4 text-green-500" />
+                          Altyapı & Kamu İnşaat İmalatı
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/application-service/special-manufacturing"
+                          className="flex items-center gap-2"
+                        >
+                          <ToolCase className="h-4 w-4 text-pink-500" />
+                          Özel Proje İnşaat İmalatı
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
+
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="flex items-center gap-2">
+                      <Truck className="h-4 w-4 text-yellow-500" />
                       Kiralama Hizmeti
-                    </Link>
-                  </DropdownMenuItem>
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuSubContent sideOffset={5}>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/excavation"
+                          className="flex items-center gap-2"
+                        >
+                          <Truck className="h-4 w-4 text-orange-500" />
+                          Kazı ve Yükleme
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/soil-compaction"
+                          className="flex items-center gap-2"
+                        >
+                          <Layers className="h-4 w-4 text-green-500" />
+                          Toprak Sıkıştırma
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/lifting"
+                          className="flex items-center gap-2"
+                        >
+                          <Truck className="h-4 w-4 text-blue-500" />
+                          Kaldırma ve Taşıma
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/road"
+                          className="flex items-center gap-2"
+                        >
+                          <Building className="h-4 w-4 text-gray-500" />
+                          Beton ve Yol
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/transport"
+                          className="flex items-center gap-2"
+                        >
+                          <Layers className="h-4 w-4 text-yellow-600" />
+                          Hafriyat ve Taşıma
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/excavation"
+                          className="flex items-center gap-2"
+                        >
+                          <ToolCase className="h-4 w-4 text-pink-500" />
+                          Özel Amaçlı
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href="/services/rental-service/ride"
+                          className="flex items-center gap-2"
+                        >
+                          <User className="h-4 w-4 text-teal-500" />
+                          Binek Araç Kiralama
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuSubContent>
+                  </DropdownMenuSub>
                 </DropdownMenuContent>
               </DropdownMenu>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about">
+                <Button variant="ghost" className="flex items-center gap-2">
+                  <Info className="h-4 w-4 text-green-600" />
+                  Hakkımızda
+                </Button>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-
       {/* Sağ ikonlar */}
       <div className="flex items-center gap-2">
         {/* Ayarlar */}

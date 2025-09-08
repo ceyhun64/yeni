@@ -49,6 +49,19 @@ const STYLES = [
   { value: "classic", label: "Klasik" },
 ];
 
+// Komple Ev Tadilatı kartı (çatı kategori)
+const completeRenovation = {
+  id: "complete-renovation",
+  title: "Ev Tadilat (Komple Tadilat)",
+  desc: "Salon, banyo, mutfak, balkon, yatak odası, çocuk odası ve çatı dahil tüm yaşam alanlarının komple yenilenmesi.",
+  img: "/images/renovation/complete.jpg",
+  style: "all",
+  tags: ["komple", "ev", "tadilat", "yenileme"],
+  sizeM2: 120,
+  beds: 3,
+  baths: 2,
+};
+
 export default function Rooms() {
   const router = useRouter();
   const [query, setQuery] = useState("");
@@ -57,7 +70,7 @@ export default function Rooms() {
   const [favorites, setFavorites] = useState([]);
 
   const list = useMemo(() => {
-    let data = [...ROOMS];
+    let data = [completeRenovation, ...ROOMS]; // önce komple, sonra odalar
     if (style !== "all") data = data.filter((r) => r.style === style);
     if (query.trim()) {
       const q = query.toLowerCase();
@@ -90,11 +103,11 @@ export default function Rooms() {
         >
           <div>
             <h1 className="flex items-center gap-2 text-2xl md:text-4xl font-bold tracking-tight text-gray-900">
-             Ev Tadilat (Komple Tadilat)
-              <Hammer className="h-8 w-8 text-gray-600"  />
+              Ev Tadilat (Komple & Oda Bazlı)
+              <Hammer className="h-8 w-8 text-gray-600" />
             </h1>
             <p className="text-muted-foreground mt-2 max-w-2xl">
-              Beğendiğiniz tasarım için hızlıca{" "}
+              Komple tadilat ya da sadece belirli odalar için{" "}
               <span className="font-medium">teklif</span> alın. Filtreleyin,
               favorileyin ve detaylara göz atın.
             </p>
@@ -114,7 +127,7 @@ export default function Rooms() {
 
             <Select value={style} onValueChange={setStyle}>
               <SelectTrigger className="border rounded-md px-3 py-2">
-                <SelectValue placeholder="Select a style" />
+                <SelectValue placeholder="Stil seçin" />
               </SelectTrigger>
               <SelectContent>
                 {STYLES.map((s) => (

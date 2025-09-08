@@ -13,7 +13,7 @@ import {
 import { Filter } from "lucide-react";
 
 export default function ProductFilter() {
-  const [priceRange, setPriceRange] = useState([0, 2000]);
+  const [priceRange, setPriceRange] = useState([0, 20000]);
 
   return (
     <aside className="w-full">
@@ -23,7 +23,7 @@ export default function ProductFilter() {
           <div className="flex items-center gap-2 mb-4">
             <Filter className="w-5 h-5 text-gray-700" />
             <h2 className="text-xl font-semibold text-gray-800">
-              Ürün Filtreleri
+              İnşaat Malzemeleri Filtreleri
             </h2>
           </div>
 
@@ -36,13 +36,20 @@ export default function ProductFilter() {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="grid gap-2 mt-2">
-                  {["Pantolon", "Gömlek", "T-Shirt", "Ceket"].map((item) => (
+                  {[
+                    "Çimento",
+                    "Tuğla",
+                    "Demir",
+                    "Ahşap",
+                    "Elektrik Malzemeleri",
+                    "Boya",
+                  ].map((item) => (
                     <label
                       key={item}
-                      htmlFor={item.toLowerCase()}
+                      htmlFor={item.toLowerCase().replace(/\s+/g, "-")}
                       className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
                     >
-                      <Checkbox id={item.toLowerCase()} />
+                      <Checkbox id={item.toLowerCase().replace(/\s+/g, "-")} />
                       <span className="text-sm text-gray-600">{item}</span>
                     </label>
                   ))}
@@ -50,23 +57,27 @@ export default function ProductFilter() {
               </AccordionContent>
             </AccordionItem>
 
-            {/* Cinsiyet */}
-            <AccordionItem value="cinsiyet">
+            {/* Markalar */}
+            <AccordionItem value="marka">
               <AccordionTrigger className="text-base font-medium text-gray-700">
-                Cinsiyet
+                Markalar
               </AccordionTrigger>
               <AccordionContent>
                 <div className="grid gap-2 mt-2">
-                  {["Kadın", "Erkek", "Unisex"].map((gender) => (
-                    <label
-                      key={gender}
-                      htmlFor={gender.toLowerCase()}
-                      className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
-                    >
-                      <Checkbox id={gender.toLowerCase()} />
-                      <span className="text-sm text-gray-600">{gender}</span>
-                    </label>
-                  ))}
+                  {["Viko", "Filli Boya", "İzocam", "Knauf", "Kalekim"].map(
+                    (brand) => (
+                      <label
+                        key={brand}
+                        htmlFor={brand.toLowerCase().replace(/\s+/g, "-")}
+                        className="flex items-center gap-2 cursor-pointer hover:text-black transition-colors"
+                      >
+                        <Checkbox
+                          id={brand.toLowerCase().replace(/\s+/g, "-")}
+                        />
+                        <span className="text-sm text-gray-600">{brand}</span>
+                      </label>
+                    )
+                  )}
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -79,12 +90,11 @@ export default function ProductFilter() {
               <AccordionContent>
                 <div className="grid gap-2 mt-2">
                   {[
-                    "Ücretsiz Kargo",
-                    "Yeni Gelenler",
-                    "Fırsat Ürünleri",
-                    "İndirimli Ürünler",
-                    "Taksit Seçeneği Olanlar",
-                    "Hızlı Gönderi",
+                    "Dayanıklı",
+                    "Çevre Dostu",
+                    "Yerli Üretim",
+                    "Hızlı Teslimat",
+                    "Toplu Alım İndirimi",
                   ].map((feature) => (
                     <label
                       key={feature}
@@ -110,8 +120,8 @@ export default function ProductFilter() {
                 <div className="mt-2">
                   <Slider
                     value={priceRange}
-                    max={2000}
-                    step={50}
+                    max={20000}
+                    step={100}
                     className="w-full"
                     onValueChange={(value) => setPriceRange(value)}
                   />

@@ -1,5 +1,5 @@
 import React from "react";
-import GetAnOffer from "@/components/modules/showroom/get-an-offer";
+import GetAnOffer from "@/components/modules/showroom/getAnOffer";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
 
