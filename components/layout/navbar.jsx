@@ -161,7 +161,7 @@ export default function Navbar() {
                     <DropdownMenuSubContent sideOffset={5}>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/kitchen-renovation"
+                          href="/room-renavation/kitchen-renovation"
                           className="flex items-center gap-2"
                         >
                           <Wrench className="h-4 w-4 text-orange-500" />
@@ -170,7 +170,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/entrance-renovation"
+                          href="/room-renavation/entrance-renovation"
                           className="flex items-center gap-2"
                         >
                           <Home className="h-4 w-4 text-blue-500" />
@@ -179,7 +179,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/kids-room-renovation"
+                          href="/room-renavation/kids-room-renovation"
                           className="flex items-center gap-2"
                         >
                           <Boxes className="h-4 w-4 text-pink-500" />
@@ -188,7 +188,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/bedroom-renovation"
+                          href="/room-renavation/bedroom-renovation"
                           className="flex items-center gap-2"
                         >
                           <Bed className="h-4 w-4 text-purple-500" />
@@ -197,7 +197,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/livingroom-renovation"
+                          href="/room-renavation/livingroom-renovation"
                           className="flex items-center gap-2"
                         >
                           <Sofa className="h-4 w-4 text-amber-500" />
@@ -206,7 +206,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/salon-renovation"
+                          href="/room-renavation/salon-renovation"
                           className="flex items-center gap-2"
                         >
                           <Home className="h-4 w-4 text-teal-500" />
@@ -215,7 +215,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/balcony-renovation"
+                          href="/room-renavation/balcony-renovation"
                           className="flex items-center gap-2"
                         >
                           <Layers className="h-4 w-4 text-lime-500" />
@@ -224,7 +224,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/toilet-renovation"
+                          href="/room-renavation/toilet-renovation"
                           className="flex items-center gap-2"
                         >
                           <ToolCase className="h-4 w-4 text-red-500" />
@@ -233,7 +233,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/bathroom-renovation"
+                          href="/room-renavation/bathroom-renovation"
                           className="flex items-center gap-2"
                         >
                           <Bath className="h-4 w-4 text-cyan-500" />
@@ -242,7 +242,7 @@ export default function Navbar() {
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
                         <Link
-                          href="/new-build-construction/complete-renovation"
+                          href="/room-renavation/complete-renovation"
                           className="flex items-center gap-2"
                         >
                           <Hammer className="h-4 w-4 text-indigo-500" />
@@ -262,7 +262,7 @@ export default function Navbar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link
-                      href="/showroom/devam-eden-projeler"
+                      href="/new-build-construction"
                       className="flex items-center gap-2"
                     >
                       <Building className="h-4 w-4 text-indigo-600" />

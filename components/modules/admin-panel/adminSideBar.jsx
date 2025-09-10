@@ -7,17 +7,32 @@ import { usePathname } from "next/navigation";
 import {
   ChevronRight,
   Users,
-  Settings,
   ClipboardList,
   UserCog,
   LogOut,
   Box,
-  Layers,
   PlusSquare,
-  Sliders,
-  ShoppingCart,
-  DollarSign,
   ListTree,
+  Inbox,
+  FileText,
+  Store,
+  LayoutGrid,
+  Hammer,
+  Utensils,
+  DoorOpen,
+  Baby,
+  Bed,
+  Sofa,
+  Lamp,
+  Sun,
+  Toilet,
+  ShowerHead,
+  Home,
+  Package,
+  FolderTree,
+  IndentIncrease,
+  CalendarDays,
+  CalendarCheck,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -28,77 +43,138 @@ import Link from "next/link";
 const adminMenuItems = [
   {
     title: "Talepler & Teklifler",
-    icon: <Layers className="w-4 h-4" />,
+    icon: <ClipboardList className="w-4 h-4 text-indigo-500" />,
     sub: [
       {
         url: "/admin/panel/request-offers/requests",
         label: "Gelen Taleplerim",
-        icon: <Layers className="w-4 h-4" />,
+        icon: <Inbox className="w-4 h-4 text-indigo-500" />,
       },
       {
         url: "/admin/panel/request-offers/offers",
         label: "Tekliflerim",
-        icon: <PlusSquare className="w-4 h-4" />,
+        icon: <FileText className="w-4 h-4 text-indigo-500" />,
       },
     ],
   },
   {
-    title: "Siparişler & Faturalar",
-    icon: <ShoppingCart className="w-4 h-4" />,
+    title: "Showroom",
+    icon: <Store className="w-4 h-4 text-pink-500" />,
     sub: [
       {
-        url: "/admin/panel/order-invoices/orders",
-        label: "Siparişlerim",
-        icon: <ClipboardList className="w-4 h-4" />,
-      },
-      {
-        url: "/admin/panel/order-invoices/invoices",
-        label: "Faturalar",
-        icon: <DollarSign className="w-4 h-4" />,
+        url: "/admin/panel/categories",
+        label: "Odalar",
+        icon: <LayoutGrid className="w-4 h-4 text-pink-500" />,
       },
     ],
   },
   {
-    title: "Ürün Yönetimi",
-    icon: <ClipboardList className="w-4 h-4" />,
+    title: "İç Oda Tadilat",
+    icon: <Hammer className="w-4 h-4 text-orange-500" />,
+    sub: [
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Mutfak",
+        icon: <Utensils className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Hol/Giriş",
+        icon: <DoorOpen className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Çocuk Odası",
+        icon: <Baby className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Yatak Odası",
+        icon: <Bed className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Oturma Odası",
+        icon: <Sofa className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Salon",
+        icon: <Lamp className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Balkon",
+        icon: <Sun className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Lavabo/WC",
+        icon: <Toilet className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Banyo",
+        icon: <ShowerHead className="w-4 h-4 text-orange-500" />,
+      },
+      {
+        url: "/admin/panel/room-renavations/kitchen",
+        label: "Ev Tadilat (Komple Tadilat)",
+        icon: <Home className="w-4 h-4 text-orange-500" />,
+      },
+    ],
+  },
+  {
+    title: "Ürünler",
+    icon: <Package className="w-4 h-4 text-green-500" />,
     sub: [
       {
         url: "/admin/panel/products",
         label: "Ürünler",
-        icon: <Box className="w-4 h-4" />,
+        icon: <Box className="w-4 h-4 text-green-500" />,
       },
       {
         url: "/admin/panel/products/create",
         label: "Ürün Ekle",
-        icon: <PlusSquare className="w-4 h-4" />,
+        icon: <PlusSquare className="w-4 h-4 text-green-500" />,
       },
     ],
   },
   {
-    title: "Kategori Yönetimi",
-    icon: <ListTree className="w-4 h-4" />,
+    title: "Kategoriler",
+    icon: <ListTree className="w-4 h-4 text-purple-500" />,
     sub: [
       {
         url: "/admin/panel/categories",
         label: "Kategoriler",
-        icon: <Layers className="w-4 h-4" />,
+        icon: <FolderTree className="w-4 h-4 text-purple-500" />,
       },
-
       {
         url: "/admin/panel/categories/sub",
         label: "Alt Kategoriler",
-        icon: <Sliders className="w-4 h-4" />,
+        icon: <IndentIncrease className="w-4 h-4 text-purple-500" />,
       },
     ],
   },
   {
-    title: "Kullanıcı Yönetimi",
-    icon: <Users className="w-4 h-4" />,
+    title: "Kullanıcılar",
+    icon: <Users className="w-4 h-4 text-blue-500" />,
     sub: [
       {
         url: "/admin/panel/users",
         label: "Tüm Kullanıcılar",
-        icon: <UserCog className="w-4 h-4" />,
+        icon: <UserCog className="w-4 h-4 text-blue-500" />,
+      },
+    ],
+  },
+  {
+    title: "Rezervasyonlar",
+    icon: <CalendarDays className="w-4 h-4 text-red-500" />,
+    sub: [
+      {
+        url: "/admin/panel/users",
+        label: "Tüm Rezervasyonlar",
+        icon: <CalendarCheck className="w-4 h-4 text-red-500" />,
       },
     ],
   },

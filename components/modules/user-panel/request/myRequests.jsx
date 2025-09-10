@@ -15,37 +15,58 @@ import { Edit, Trash, Info } from "lucide-react";
 export default function MyRequests() {
   const [requests, setRequests] = useState([
     {
-      id: 1,
-      title: "Ev Temizliği",
-      status: "Tamamlandı",
-      date: "2025-08-30",
-      description: "Ev genel temizlik yapılacak",
-      category: "Ev Hizmeti",
-      priority: "Yüksek",
-      contact: "example1@gmail.com",
-      assignedTo: "Ahmet Yılmaz",
+      id: "req301",
+      tarih: "06.09.2025",
+      talepTur: "Malzeme Talebi",
+      kategori: "MALZEME",
+      urunAdi: "İnşaat Demiri 12mm",
+      marka: "BrandX",
+      miktar: 100,
+      birim: "Adet",
+      urunKullanimSektor: "İnşaat",
+      il: "İstanbul",
+      ilce: "Kadıköy",
+      firmaKod: "FRM123",
+      altKategori: "İnşaat Demiri",
+      nakliyeDurumu: "dahil",
+      termin: "15.09.2025",
+      odeme: "kart",
     },
     {
-      id: 2,
-      title: "Ofis Temizliği",
-      status: "Beklemede",
-      date: "2025-08-28",
-      description: "Ofiste haftalık temizlik",
-      category: "Ofis Hizmeti",
-      priority: "Orta",
-      contact: "example2@gmail.com",
-      assignedTo: "Mehmet Kaya",
+      id: "req302",
+      tarih: "07.09.2025",
+      talepTur: "Hizmet Talebi",
+      kategori: "HİZMET",
+      urunAdi: "Banyo Yenileme",
+      marka: "Renovex",
+      miktar: 1,
+      birim: "Proje",
+      urunKullanimSektor: "Tadilat",
+      il: "Ankara",
+      ilce: "Çankaya",
+      firmaKod: "FRM456",
+      altKategori: "Banyo Tadilat",
+      nakliyeDurumu: "hariç",
+      termin: "20.09.2025",
+      odeme: "havale",
     },
     {
-      id: 3,
-      title: "Bahçe Düzenleme",
-      status: "İptal Edildi",
-      date: "2025-08-25",
-      description: "Bahçe bakımı ve çiçek dikimi",
-      category: "Bahçe Hizmeti",
-      priority: "Düşük",
-      contact: "example3@gmail.com",
-      assignedTo: "Ayşe Demir",
+      id: "req303",
+      tarih: "08.09.2025",
+      talepTur: "Kiralama Talebi",
+      kategori: "KİRALAMA",
+      urunAdi: "Ekskavatör ZX200",
+      marka: "Hitachi",
+      miktar: 2,
+      birim: "Adet",
+      urunKullanimSektor: "İnşaat",
+      il: "İzmir",
+      ilce: "Bornova",
+      firmaKod: "FRM789",
+      altKategori: "Kazı ve Yükleme",
+      nakliyeDurumu: "dahil",
+      termin: "25.09.2025",
+      odeme: "çek",
     },
   ]);
 
@@ -55,22 +76,10 @@ export default function MyRequests() {
     }
   };
 
-  const statusColors = {
-    Tamamlandı: "bg-green-100 text-green-800",
-    Beklemede: "bg-yellow-100 text-yellow-800",
-    "İptal Edildi": "bg-red-100 text-red-800",
-  };
-
-  const priorityColors = {
-    Yüksek: "bg-red-200 text-red-900",
-    Orta: "bg-yellow-200 text-yellow-900",
-    Düşük: "bg-green-200 text-green-900",
-  };
-
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-gray-200">
+      <aside className="w-64 border-r border-gray-200 bg-white">
         <UserSideBar />
       </aside>
 
@@ -94,41 +103,40 @@ export default function MyRequests() {
                         href={`/user-panel/request/request-details/${req.id}`}
                         className="hover:underline"
                       >
-                        {req.title}
+                        {req.urunAdi}
                       </Link>
                     </CardTitle>
-                    <span
-                      className={`px-2 py-1 text-xs font-medium rounded-full ${
-                        statusColors[req.status]
-                      }`}
-                    >
-                      {req.status}
+                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+                      {req.talepTur}
                     </span>
                   </div>
                   <CardDescription className="text-gray-500">
-                    {req.date}
+                    Talep Tarihi: {req.tarih}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="flex flex-col gap-3">
-                  <p className="text-gray-700">{req.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span
-                      className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                        priorityColors[req.priority]
-                      }`}
-                    >
-                      Öncelik: {req.priority}
-                    </span>
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
-                      Kategori: {req.category}
-                    </span>
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
-                      Sorumlu: {req.assignedTo}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-500">
-                    İletişim: {req.contact}
+                  <p className="text-gray-700">
+                    <strong>Kategori:</strong> {req.kategori} ({req.altKategori}
+                    )
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Marka:</strong> {req.marka}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Miktar:</strong> {req.miktar} {req.birim}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Lokasyon:</strong> {req.il} / {req.ilce}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Termin:</strong> {req.termin}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Ödeme:</strong> {req.odeme}
+                  </p>
+                  <p className="text-gray-700">
+                    <strong>Nakliye:</strong> {req.nakliyeDurumu}
                   </p>
 
                   <div className="flex gap-2 mt-2">

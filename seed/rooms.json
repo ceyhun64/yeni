@@ -13,7 +13,6 @@
     "sizeM2": 28,
     "beds": 0,
     "baths": 1,
-    "priceRange": "₺60.000 – ₺120.000",
     "desc": "Geniş oturma alanı, doğal ışık ve sade çizgilerle modern konfor."
   },
   {
@@ -30,7 +29,6 @@
     "sizeM2": 16,
     "beds": 1,
     "baths": 1,
-    "priceRange": "₺45.000 – ₺90.000",
     "desc": "Sıcak ahşap dokular ve yumuşak tonlarla huzurlu bir atmosfer."
   },
   {
@@ -47,7 +45,6 @@
     "sizeM2": 14,
     "beds": 0,
     "baths": 1,
-    "priceRange": "₺70.000 – ₺140.000",
     "desc": "Metalik yüzeyler ve koyu paletle güçlü bir mutfak tasarımı."
   },
   {
@@ -64,7 +61,6 @@
     "sizeM2": 24,
     "beds": 0,
     "baths": 1,
-    "priceRange": "₺50.000 – ₺110.000",
     "desc": "Katmanlı tekstiller ve bitkilerle sıcak, samimi bir alan."
   },
   {
@@ -81,7 +77,6 @@
     "sizeM2": 12,
     "beds": 0,
     "baths": 0,
-    "priceRange": "₺40.000 – ₺80.000",
     "desc": "Doğal dokular ve yalınlıkla odaklanmayı destekleyen çalışma alanı."
   },
   {
@@ -98,7 +93,6 @@
     "sizeM2": 13,
     "beds": 1,
     "baths": 1,
-    "priceRange": "₺35.000 – ₺75.000",
     "desc": "Oyun ve düzeni bir araya getiren renkli bir dünya."
   },
   {
@@ -115,7 +109,6 @@
     "sizeM2": 9,
     "beds": 0,
     "baths": 1,
-    "priceRange": "₺30.000 – ₺65.000",
     "desc": "Serin mavi tonlar ve desenli seramiklerle ferah bir banyo."
   },
   {
@@ -132,7 +125,6 @@
     "sizeM2": 26,
     "beds": 0,
     "baths": 1,
-    "priceRange": "₺80.000 – ₺160.000",
     "desc": "İnce detaylar ve asil dokularla zarif bir yaşam alanı."
   }
 ]

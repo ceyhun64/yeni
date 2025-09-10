@@ -11,10 +11,7 @@ import {
   ClipboardList,
   PlusCircle,
   List,
-  Package,
-  CreditCard,
-  History,
-  Undo2,
+  CalendarCheck,
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -49,7 +46,7 @@ const menuItems = [
     icon: <ClipboardList className="w-4 h-4" />,
     sub: [
       {
-        url: "/request",
+        url: "/user-panel/request/new-request",
         label: "Yeni Talep Oluştur",
         icon: <PlusCircle className="w-4 h-4" />,
       },
@@ -61,7 +58,7 @@ const menuItems = [
     ],
   },
   {
-    title: "Teklif & Siparişler",
+    title: "Teklifler",
     icon: <FileCheck className="w-4 h-4" />,
     sub: [
       {
@@ -69,26 +66,16 @@ const menuItems = [
         label: "Tekliflerim",
         icon: <FileCheck className="w-4 h-4" />,
       },
-      {
-        url: "/user-panel/offer/my-orders",
-        label: "Siparişlerim",
-        icon: <Package className="w-4 h-4" />,
-      },
     ],
   },
   {
-    title: "Ödeme Yönetimi",
-    icon: <CreditCard className="w-4 h-4" />,
+    title: "Rezervasyonlarım",
+    icon: <CalendarCheck className="w-4 h-4" />,
     sub: [
       {
-        url: "/user-panel/payment/payment-history",
-        label: "Geçmiş Ödemelerim",
-        icon: <History className="w-4 h-4" />,
-      },
-      {
-        url: "/user-panel/payment/return",
-        label: "İade / İptal Talepleri",
-        icon: <Undo2 className="w-4 h-4" />,
+        url: "/user-panel/reservation/my-reservations",
+        label: "Rezervasyonlarım",
+        icon: <CalendarCheck className="w-4 h-4" />,
       },
     ],
   },

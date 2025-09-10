@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "title": "3+1 Dubleks Villa",
+    "desc": "Geniş bahçeli, modern mimariye sahip villa.",
+    "type": "Villa",
+    "sizeM2": 180,
+    "floors": 2,
+    "rooms": 4,
+    "img": "/projects/dubleks-villa.jpg",
+    "tags": ["Villa", "Bahçe", "Modern", "Dubleks"],
+    "gallery": [
+      "/projects/dubleks-villa-1.jpg",
+      "/projects/dubleks-villa-2.jpg",
+      "/projects/dubleks-villa-3.jpg",
+      "/projects/dubleks-villa-4.jpg",
+      "/projects/dubleks-villa-5.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "4+1 Tripleks Villa",
+    "desc": "Lüks donanımlı, havuzlu tripleks villa.",
+    "type": "Villa",
+    "sizeM2": 250,
+    "floors": 3,
+    "rooms": 5,
+    "img": "/projects/tripleks-villa.jpg",
+    "tags": ["Villa", "Havuz", "Lüks", "Tripleks"],
+    "gallery": [
+      "/projects/tripleks-villa-1.jpg",
+      "/projects/tripleks-villa-2.jpg",
+      "/projects/tripleks-villa-3.jpg",
+      "/projects/tripleks-villa-4.jpg",
+      "/projects/tripleks-villa-5.jpg",
+      "/projects/tripleks-villa-6.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "2+1 Müstakil Ev",
+    "desc": "Küçük bahçesi olan, tek katlı müstakil ev.",
+    "type": "Müstakil",
+    "sizeM2": 95,
+    "floors": 1,
+    "rooms": 3,
+    "img": "/projects/villa.jpg",
+    "tags": ["Müstakil", "Bahçe", "Tek Katlı"],
+    "gallery": [
+      "/projects/mustakil-1.jpg",
+      "/projects/mustakil-2.jpg",
+      "/projects/mustakil-3.jpg",
+      "/projects/mustakil-4.jpg",
+      "/projects/mustakil-5.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "3+1 Yazlık Ev",
+    "desc": "Denize yakın, geniş teraslı yazlık ev.",
+    "type": "Yazlık",
+    "sizeM2": 140,
+    "floors": 2,
+    "rooms": 4,
+    "img": "/projects/yazlik.jpg",
+    "tags": ["Yazlık", "Teras", "Denize Yakın", "İki Katlı"],
+    "gallery": [
+      "/projects/yazlik-1.jpg",
+      "/projects/yazlik-2.jpg",
+      "/projects/yazlik-3.jpg",
+      "/projects/yazlik-4.jpg",
+      "/projects/yazlik-5.jpg",
+      "/projects/yazlik-6.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "1+1 Tiny House",
+    "desc": "Doğa ile iç içe, minimalist yaşam için tiny house.",
+    "type": "Tiny House",
+    "sizeM2": 45,
+    "floors": 1,
+    "rooms": 2,
+    "img": "/projects/tiny.jpg",
+    "tags": ["Tiny House", "Minimalist", "Doğa", "Tek Katlı"],
+    "gallery": [
+      "/projects/tiny-1.jpg",
+      "/projects/tiny-2.jpg",
+      "/projects/tiny-3.jpg",
+      "/projects/tiny-4.jpg",
+      "/projects/tiny-5.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "4+1 Çiftlik Evi",
+    "desc": "Geniş arazili, verandası olan çiftlik evi.",
+    "type": "Çiftlik Evi",
+    "sizeM2": 200,
+    "floors": 2,
+    "rooms": 5,
+    "img": "/projects/ciftlik.jpg",
+    "tags": ["Çiftlik Evi", "Bahçe", "Veranda", "İki Katlı"],
+    "gallery": [
+      "/projects/ciftlik-1.jpg",
+      "/projects/ciftlik-2.jpg",
+      "/projects/ciftlik-3.jpg",
+      "/projects/ciftlik-4.jpg",
+      "/projects/ciftlik-5.jpg",
+      "/projects/ciftlik-6.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "3+1 Ahşap Dağ Evi",
+    "desc": "Doğal ahşap tasarımlı, dağ manzaralı ev.",
+    "type": "Dağ Evi",
+    "sizeM2": 130,
+    "floors": 2,
+    "rooms": 4,
+    "img": "/projects/dag.jpg",
+    "tags": ["Dağ Evi", "Ahşap", "Doğa", "İki Katlı"],
+    "gallery": [
+      "/projects/dag-1.jpg",
+      "/projects/dag-2.jpg",
+      "/projects/dag-3.jpg",
+      "/projects/dag-4.jpg",
+      "/projects/dag-5.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "5+1 Lüks Villa",
+    "desc": "Havuzlu, geniş garajlı ve modern tasarımlı lüks villa.",
+    "type": "Villa",
+    "sizeM2": 320,
+    "floors": 3,
+    "rooms": 6,
+    "img": "/projects/luks-villa.jpg",
+    "tags": ["Villa", "Lüks", "Havuz", "Tripleks"],
+    "gallery": [
+      "/projects/luks-villa-1.jpg",
+      "/projects/luks-villa-2.jpg",
+      "/projects/luks-villa-3.jpg",
+      "/projects/luks-villa-4.jpg",
+      "/projects/luks-villa-5.jpg",
+      "/projects/luks-villa-6.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "2+1 Kır Evi",
+    "desc": "Kırsal bölgede, bahçeli ve huzurlu kır evi.",
+    "type": "Kır Evi",
+    "sizeM2": 110,
+    "floors": 1,
+    "rooms": 3,
+    "img": "/projects/kir.jpg",
+    "tags": ["Kır Evi", "Bahçe", "Doğa", "Tek Katlı"],
+    "gallery": [
+      "/projects/kir-1.jpg",
+      "/projects/kir-2.jpg",
+      "/projects/kir-3.jpg",
+      "/projects/kir-4.jpg",
+      "/projects/kir-5.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "3+1 Taş Ev",
+    "desc": "Rustik taş mimariye sahip, dayanıklı ev.",
+    "type": "Taş Ev",
+    "sizeM2": 150,
+    "floors": 2,
+    "rooms": 4,
+    "img": "/projects/tas.jpg",
+    "tags": ["Taş Ev", "Rustik", "İki Katlı"],
+    "gallery": [
+      "/projects/tas-1.jpg",
+      "/projects/tas-2.jpg",
+      "/projects/tas-3.jpg",
+      "/projects/tas-4.jpg",
+      "/projects/tas-5.jpg",
+      "/projects/tas-6.jpg"
+    ]
+  }
+]

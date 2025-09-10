@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -28,7 +27,10 @@ import {
   Table,
   Frame,
   FileText,
-  Calendar,
+  ShoppingCart,
+  DollarSign, // Eko
+  Crown, // Standart
+  Gem, // Pro
 } from "lucide-react";
 
 export default function GetAnOffer() {
@@ -42,8 +44,8 @@ export default function GetAnOffer() {
   const [counter, setCounter] = useState("");
   const [price, setPrice] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedPackage, setSelectedPackage] = useState("standart"); // Varsayılan: "standart"
 
-  // Buraya ref ekliyoruz
   const priceRef = useRef(null);
 
   if (!room)
@@ -56,14 +58,55 @@ export default function GetAnOffer() {
   const calculatePrice = () => {
     const area = ((Number(width) || 0) * (Number(length) || 0)) / 10000; // m²
     const counterSize = Number(counter) || 0;
-    const basePrice = area * 2500 + counterSize * 50;
+    const heightSize = Number(height) || 0;
+    let basePrice = 0;
+
+    switch (selectedPackage) {
+      case "eko":
+        basePrice = area * 1500 + counterSize * 30 + heightSize * 5;
+        break;
+      case "standart":
+        basePrice = area * 2500 + counterSize * 50 + heightSize * 8;
+        break;
+      case "pro":
+        basePrice = area * 3500 + counterSize * 75 + heightSize * 10;
+        break;
+      default:
+        basePrice = 0;
+    }
+
     setPrice(Math.round(basePrice));
 
-    // Scroll işlemi
     if (priceRef.current) {
       priceRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+
+  const handlePackageSelect = (pkg) => {
+    setSelectedPackage(pkg);
+    setPrice(null);
+  };
+
+  // Seçilen pakete göre dinamik olarak değişen stil ve ikonlar
+  const packageStyles = {
+    eko: {
+      card: "bg-gray-100",
+      title: "text-gray-700",
+      icon: <DollarSign className="w-5 h-5 text-gray-700" />,
+    },
+    standart: {
+      card: "bg-orange-50 shadow-md",
+      title: "text-orange-600",
+      icon: <Crown className="w-5 h-5 text-orange-600" />,
+    },
+    pro: {
+      card: "bg-gradient-to-br from-yellow-50 to-yellow-100 shadow-lg border border-yellow-200",
+      title: "text-yellow-700",
+      icon: <Gem className="w-5 h-5 text-yellow-700" />,
+    },
+  };
+
+  const currentStyle = packageStyles[selectedPackage];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-6">
@@ -76,7 +119,6 @@ export default function GetAnOffer() {
           className="lg:col-span-2 space-y-6"
         >
           <Card className="shadow-sm rounded-3xl overflow-hidden">
-            {/* Galeri */}
             <div className="grid grid-cols-3 gap-2 p-4">
               {room.gallery?.map((img, i) => (
                 <img
@@ -88,20 +130,18 @@ export default function GetAnOffer() {
                 />
               ))}
             </div>
+            {/* ejdwkşjdkewjdejdjwekdjkewhdkjwhdkjewıde */}
             {selectedImage && (
               <div
                 className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-                onClick={() => setSelectedImage(null)} // arka plana tıklayınca kapanır
+                onClick={() => setSelectedImage(null)}
               >
-                {/* Kapatma butonu ekranın sağ üst köşesinde */}
                 <button
                   className="fixed top-4 right-4 z-60 w-10 h-10 flex items-center justify-center text-black bg-white/80 rounded-full hover:bg-white/70 shadow-lg"
                   onClick={() => setSelectedImage(null)}
                 >
                   ✕
                 </button>
-
-                {/* Resim */}
                 <motion.img
                   src={selectedImage}
                   alt="Selected"
@@ -109,11 +149,10 @@ export default function GetAnOffer() {
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}
-                  onClick={(e) => e.stopPropagation()} // resme tıklayınca overlay kapanmasın
+                  onClick={(e) => e.stopPropagation()}
                 />
               </div>
             )}
-
             <CardHeader className="px-6 pt-4">
               <CardTitle className="text-3xl font-bold flex items-center gap-3 text-gray-900">
                 <Tag className="w-6 h-6 text-primary" /> {room.title}
@@ -122,9 +161,7 @@ export default function GetAnOffer() {
                 {room.desc}
               </CardDescription>
             </CardHeader>
-
             <CardContent className="space-y-6 px-6 pb-6">
-              {/* Etiketler */}
               <div className="flex flex-wrap gap-3">
                 {room.tags.map((tag) => (
                   <Badge
@@ -136,8 +173,6 @@ export default function GetAnOffer() {
                   </Badge>
                 ))}
               </div>
-
-              {/* Özellikler */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
                 <Feature
                   icon={<Ruler />}
@@ -146,16 +181,8 @@ export default function GetAnOffer() {
                 />
                 <Feature icon={<Bed />} label="Yatak" value={room.beds} />
                 <Feature icon={<Bath />} label="Banyo" value={room.baths} />
-                {/* <Feature
-                  icon={<Wallet />}
-                  label="Bütçe"
-                  value={room.priceRange}
-                /> */}
               </div>
-
               <Separator />
-
-              {/* Kullanılan Ürünler */}
               <div>
                 <h3 className="font-semibold text-lg mb-2 flex items-center gap-2">
                   <Sofa className="w-5 h-5 text-primary" /> Kullanılan Ürünler
@@ -178,10 +205,7 @@ export default function GetAnOffer() {
                   </li>
                 </ul>
               </div>
-
               <Separator />
-
-              {/* Tasarımcı Notu */}
               <div className="bg-gray-50 rounded-2xl p-5 border-l-4 border-primary">
                 <h4 className="font-semibold mb-2 flex items-center gap-2">
                   <FileText className="w-5 h-5 text-primary" /> Tasarımcı Notu
@@ -202,17 +226,58 @@ export default function GetAnOffer() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
         >
-          <Card className="rounded-3xl shadow-sm p-6 space-y-6 bg-white">
+          <Card
+            className={`rounded-3xl shadow-sm p-6 space-y-6 transition-all duration-300 ${currentStyle.card}`}
+          >
             <CardHeader className="px-0 pt-0">
-              <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                <Ruler className="w-5 h-5 text-primary" /> Ölçülerinizi Girin
+              {/* Paket Seçim Butonları */}
+              <div className="flex justify-around border-b mb-6">
+                <button
+                  onClick={() => handlePackageSelect("eko")}
+                  className={`py-2 px-4 text-center font-medium transition-colors flex items-center gap-2 ${
+                    selectedPackage === "eko"
+                      ? "border-b-2 border-orange-500 text-orange-500"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  <DollarSign className="w-4 h-4" />
+                  Eko
+                </button>
+                <button
+                  onClick={() => handlePackageSelect("standart")}
+                  className={`py-2 px-4 text-center font-medium transition-colors flex items-center gap-2 ${
+                    selectedPackage === "standart"
+                      ? "border-b-2 border-orange-500 text-orange-500"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  <Crown className="w-4 h-4" />
+                  Standart
+                </button>
+                <button
+                  onClick={() => handlePackageSelect("pro")}
+                  className={`py-2 px-4 text-center font-medium transition-colors flex items-center gap-2 ${
+                    selectedPackage === "pro"
+                      ? "border-b-2 border-orange-500 text-orange-500"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  <Gem className="w-4 h-4" />
+                  Pro
+                </button>
+              </div>
+
+              <CardTitle
+                className={`text-2xl font-bold flex items-center gap-2 ${currentStyle.title}`}
+              >
+                Ölçülerinizi Girin
               </CardTitle>
               <CardDescription className="text-gray-600">
                 Size özel fiyatlandırma için alan ölçülerini paylaşın.
               </CardDescription>
             </CardHeader>
-
             <CardContent className="space-y-4 px-0">
+              {/* TÜM PAKETLER İÇİN AYNI GİRDİLER */}
               <InputField
                 label="En (cm)"
                 value={width}
@@ -237,6 +302,7 @@ export default function GetAnOffer() {
                 onChange={setCounter}
                 placeholder="örn. 250"
               />
+
               <div className="grid gap-2">
                 <Label htmlFor="note">Ek Notlar</Label>
                 <Textarea
@@ -258,7 +324,6 @@ export default function GetAnOffer() {
               </div>
             </CardContent>
             <Separator />
-            {/* Fiyat kartına ref ekliyoruz */}
             <Card
               ref={priceRef}
               className="mt-4 bg-gray-50 rounded-2xl p-4 text-center"
@@ -278,20 +343,18 @@ export default function GetAnOffer() {
                     tags: room.tags || [],
                     gallery: room.gallery || [],
                   };
-
                   const query = new URLSearchParams({
                     width,
                     length,
                     height,
                     counter,
-                    room: JSON.stringify(roomData), // JSON string olarak gönderiyoruz
+                    room: JSON.stringify(roomData),
                   }).toString();
-
                   router.push(`/reservation/room?${query}`);
                 }}
-                disabled={price === null} // price null ise pasif
+                disabled={price === null}
               >
-                <Calendar className="w-4 h-4" /> Keşif İçin Rezervasyon Al
+                <ShoppingCart className="w-4 h-4" /> Keşif İçin Rezervasyon Al
               </Button>
             </Card>
           </Card>
@@ -318,7 +381,7 @@ const InputField = ({ label, value, onChange, placeholder }) => (
       type="number"
       value={value}
       placeholder={placeholder}
-      onChange={(e) => onChange(e.target.value)} // String olarak tutuyoruz
+      onChange={(e) => onChange(e.target.value)}
       className="rounded-xl"
     />
   </div>
