@@ -11,6 +11,7 @@ import {
   Wrench,
   Package,
   Sparkles,
+  Hammer,
 } from "lucide-react";
 import Navbar from "@/components/layout/navbar";
 import Link from "next/link";
@@ -19,25 +20,36 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="min-h-screen bg-[#F0F2F5] flex flex-col items-center py-8 ">
+      <div className="min-h-screen bg-[#F0F2F5] flex flex-col items-center py-6">
         {/* Ana İçerik */}
-        <main className="w-full  text-center">
-          <h1 className="text-4xl font-bold text-[#333] mb-4">Hoş Geldiniz</h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
+        <main className="w-full text-center">
+          {/* Başlık */}
+          <h1 className="text-4xl font-bold text-[#333] mb-3">Hoş Geldiniz</h1>
+          <p className="text-base text-gray-600 mb-6 max-w-3xl mx-auto">
             İnşaat ve tadilat projeleriniz için ihtiyacınız olan tüm hizmetleri
-            tek platformda bulun. Profesyonel ekibimiz ve kaliteli hizmet
-            anlayışımızla yanınızdayız.
+            tek platformda bulun. Peşinatsız işe başlama, HAKEDİŞ sisteminde
+            ödeme ve iş planı, profesyonel ekibimiz, kaliteli hizmet ve
+            zamanında teslim iş anlayışıyla TÜM TÜRKİYE'DE YANINIZDAYIZ. Her
+            proje bir şantiye, her şantiye bir proje stratejisiyle emeğinize ve
+            işinize saygı duyarak temelimizi attık.
           </p>
 
+          <h2
+            style={{ fontFamily: '"Dancing Script", cursive' }}
+            className="text-3xl text-[#007EA7] mb-8 font-extrabold"
+          >
+            "Temelden Zirveye..."
+          </h2>
+
           {/* Kart Hiyerarşisi */}
-          <div className="flex flex-col items-center space-y-4">
+          <div className="flex flex-col items-center space-y-3">
             {/* Üst Kart */}
             <Link href="/jobpool" className="w-full max-w-sm">
               <Card className="bg-[#006494] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                 <CardHeader className="flex flex-col items-center text-center p-2">
-                  <LayoutDashboard className="h-6 w-6 mb-1" />
+                  <LayoutDashboard className="h-5 w-5 mb-1" />
                   <CardTitle className="text-base">İş Havuzu</CardTitle>
-                  <CardDescription className="text-[#B2D6E7] text-sm">
+                  <CardDescription className="text-[#B2D6E7] text-xs">
                     Aktif projeler
                   </CardDescription>
                 </CardHeader>
@@ -45,16 +57,16 @@ export default function Home() {
             </Link>
 
             {/* Orta Kartlar */}
-            <div className="grid md:grid-cols-2 gap-4 w-full max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-3 w-full max-w-3xl">
               <Link href="/maliyet-hesaplama">
                 <Card className="bg-[#007EA7] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <Calculator className="h-6 w-6 mb-1" />
+                    <Calculator className="h-5 w-5 mb-1" />
                     <CardTitle className="text-base">
                       Maliyet Hesaplama
                     </CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Proje maliyetleri
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      Proje, inşaat ve tadilat
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -63,10 +75,10 @@ export default function Home() {
               <Link href="/showroom/rooms">
                 <Card className="bg-[#007EA7] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <Sparkles className="h-6 w-6 mb-1" />
+                    <Sparkles className="h-5 w-5 mb-1" />
                     <CardTitle className="text-base">Showroom</CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Ürün galerisi
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      Oda kombinleri, devam eden projeler, tamamlanmış projeler
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -74,40 +86,38 @@ export default function Home() {
             </div>
 
             {/* Alt Kartlar */}
-            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-8xl px-10">
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-6xl px-4">
               <Link href="/proje-mimari">
                 <Card className="bg-[#0089A8] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <Building className="h-6 w-6 mb-1" />
+                    <Building className="h-5 w-5 mb-1" />
                     <CardTitle className="text-base">Proje</CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Mimari
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      Mimari ve 3D görselleştirme
                     </CardDescription>
                   </CardHeader>
                 </Card>
               </Link>
 
-              <Link href="/new-build-construction/kitchen-renovation">
+              <Link href="/kiralama">
                 <Card className="bg-[#0089A8] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <Wrench className="h-6 w-6 mb-1" />
-                    <CardTitle className="text-base">
-                      İnşaat & Tadilat
-                    </CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Yapı işleri
+                    <Hammer className="h-5 w-5 mb-1" />
+                    <CardTitle className="text-base">Kiralama</CardTitle>
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      İş makinası ve ekipman
                     </CardDescription>
                   </CardHeader>
                 </Card>
               </Link>
 
-              <Link href="/services/application-service/housing-manufacturing">
+              <Link href="/hizmet">
                 <Card className="bg-[#0089A8] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <LayoutDashboard className="h-6 w-6 mb-1" />
+                    <Wrench className="h-5 w-5 mb-1" />
                     <CardTitle className="text-base">Hizmet</CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Teknik
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      Taşeron, usta ve uygulama ekibi
                     </CardDescription>
                   </CardHeader>
                 </Card>
@@ -116,10 +126,10 @@ export default function Home() {
               <Link href="/products">
                 <Card className="bg-[#0089A8] text-white shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer">
                   <CardHeader className="flex flex-col items-center text-center p-2">
-                    <Package className="h-6 w-6 mb-1" />
+                    <Package className="h-5 w-5 mb-1" />
                     <CardTitle className="text-base">Ürün Tedariği</CardTitle>
-                    <CardDescription className="text-[#B2D6E7] text-sm">
-                      Malzeme
+                    <CardDescription className="text-[#B2D6E7] text-xs">
+                      Yapı ürün ve malzemeleri
                     </CardDescription>
                   </CardHeader>
                 </Card>

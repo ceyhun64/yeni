@@ -3,14 +3,22 @@ import React, { useState } from "react";
 import UserSideBar from "../userSideBar";
 import {
   Card,
-  CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
+  CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { motion } from "framer-motion";
+import { CalendarDays, MapPin, CreditCard } from "lucide-react";
 import Link from "next/link";
-import { Edit, Trash, Info } from "lucide-react";
 
 export default function MyRequests() {
   const [requests, setRequests] = useState([
@@ -76,97 +84,118 @@ export default function MyRequests() {
     }
   };
 
+  const badgeColor = (type) => {
+    switch (type) {
+      case "Malzeme Talebi":
+        return "bg-blue-100 text-blue-700";
+      case "Hizmet Talebi":
+        return "bg-purple-100 text-purple-700";
+      case "Kiralama Talebi":
+        return "bg-green-100 text-green-700";
+      default:
+        return "bg-gray-100 text-gray-700";
+    }
+  };
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-gray-200 bg-white">
+      <div className="w-64 border-r bg-white">
         <UserSideBar />
-      </aside>
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-8 space-y-6">
-        <h1 className="text-3xl font-bold text-gray-900">Taleplerim</h1>
+      <div className="flex-1 p-8">
+        <h1 className="text-2xl font-bold mb-8 text-gray-800">Taleplerim</h1>
 
         {requests.length === 0 ? (
           <p className="text-gray-500">Henüz oluşturulmuş talep yok.</p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {requests.map((req) => (
-              <Card
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {requests.map((req, i) => (
+              <motion.div
                 key={req.id}
-                className="hover:shadow-xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
               >
-                <CardHeader>
-                  <div className="flex justify-between items-start">
+                <Card className="flex flex-col rounded-xl border border-gray-200 shadow-sm bg-white hover:shadow-md transition-all duration-200">
+                  <CardHeader className="flex flex-col items-start space-y-2">
                     <CardTitle className="text-lg font-semibold text-gray-900">
-                      <Link
-                        href={`/user-panel/request/request-details/${req.id}`}
-                        className="hover:underline"
-                      >
-                        {req.urunAdi}
-                      </Link>
+                      {req.urunAdi}
                     </CardTitle>
-                    <span className="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+                    <Badge className={badgeColor(req.talepTur)}>
                       {req.talepTur}
-                    </span>
-                  </div>
-                  <CardDescription className="text-gray-500">
-                    Talep Tarihi: {req.tarih}
-                  </CardDescription>
-                </CardHeader>
+                    </Badge>
+                  </CardHeader>
 
-                <CardContent className="flex flex-col gap-3">
-                  <p className="text-gray-700">
-                    <strong>Kategori:</strong> {req.kategori} ({req.altKategori}
-                    )
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Marka:</strong> {req.marka}
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Miktar:</strong> {req.miktar} {req.birim}
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Lokasyon:</strong> {req.il} / {req.ilce}
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Termin:</strong> {req.termin}
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Ödeme:</strong> {req.odeme}
-                  </p>
-                  <p className="text-gray-700">
-                    <strong>Nakliye:</strong> {req.nakliyeDurumu}
-                  </p>
+                  <CardContent className="space-y-2 text-sm text-gray-700">
+                    <div className="flex items-center gap-2">
+                      <CalendarDays className="w-4 h-4 text-gray-500" />
+                      <span>Talep Tarihi: {req.tarih}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-gray-500" />
+                      <span>
+                        {req.il} / {req.ilce}
+                      </span>
+                    </div>
+                  </CardContent>
 
-                  <div className="flex gap-2 mt-2">
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="details">
+                      <AccordionTrigger className="px-4 text-sm text-gray-600">
+                        Detaylar
+                      </AccordionTrigger>
+                      <AccordionContent className="px-4 pb-4 space-y-1 text-sm text-gray-600">
+                        <p>
+                          <strong>Kategori:</strong> {req.kategori} (
+                          {req.altKategori})
+                        </p>
+                        <p>
+                          <strong>Marka:</strong> {req.marka}
+                        </p>
+                        <p>
+                          <strong>Miktar:</strong> {req.miktar} {req.birim}
+                        </p>
+                        <p>
+                          <strong>Termin:</strong> {req.termin}
+                        </p>
+                        <p className="flex items-center gap-1">
+                          <CreditCard className="w-4 h-4 text-gray-500" />
+                          <span>Ödeme: {req.odeme}</span>
+                        </p>
+                        <p>
+                          <strong>Nakliye:</strong> {req.nakliyeDurumu}
+                        </p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+
+                  <CardFooter className="flex gap-2 justify-end p-4">
+                
                     <Link href={`/user-panel/request/edit-request/${req.id}`}>
-                      <Button size="sm" variant="outline">
-                        <Edit className="w-4 h-4" /> Düzenle
+                      <Button
+                        size="sm"
+                        className="bg-indigo-600 text-white hover:bg-indigo-700"
+                      >
+                        Düzenle
                       </Button>
                     </Link>
                     <Button
                       size="sm"
-                      variant="destructive"
+                      className="bg-red-600 text-white hover:bg-red-700"
                       onClick={() => handleDelete(req.id)}
                     >
-                      <Trash className="w-4 h-4" /> Sil
+                      Sil
                     </Button>
-                    <Link
-                      href={`/user-panel/request/request-details/${req.id}`}
-                      className="ml-auto"
-                    >
-                      <Button size="sm" variant="secondary">
-                        <Info className="w-4 h-4" /> Detay
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardFooter>
+                </Card>
+              </motion.div>
             ))}
           </div>
         )}
-      </main>
+      </div>
     </div>
   );
 }

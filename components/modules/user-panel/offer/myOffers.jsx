@@ -10,30 +10,63 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { motion } from "framer-motion";
+import {
+  Building2,
+  CalendarDays,
+  MapPin,
+  Truck,
+  CreditCard,
+} from "lucide-react";
 
 export default function MyOffers() {
   const [offers] = useState([
     {
       id: 1,
-      requestTitle: "Mutfak Yenileme",
+      type: "Hizmet",
+      buyer: "ABC İnşaat Ltd.",
+      projectName: "Mutfak Yenileme",
+      projectNumber: "PRJ-2025-001",
+      address: "İstanbul, Kadıköy",
+      requestDate: "2025-08-20",
+      deliveryDate: "2025-08-30",
+      shipping: "Dahil",
+      payment: "Havale",
       price: "45.000 ₺",
-      date: "2025-08-30",
       status: "Beklemede",
     },
     {
       id: 2,
-      requestTitle: "Ofis Bölme Duvar Yapımı",
+      type: "Malzeme",
+      buyer: "XYZ Yapı A.Ş.",
+      projectName: "Ofis Bölme Duvar Yapımı",
+      projectNumber: "PRJ-2025-002",
+      address: "Ankara, Çankaya",
+      requestDate: "2025-08-18",
+      deliveryDate: "2025-08-28",
+      shipping: "Hariç",
+      payment: "Cari",
       price: "28.000 ₺",
-      date: "2025-08-28",
       status: "Kabul Edildi",
     },
     {
       id: 3,
-      requestTitle: "Banyo Tadilatı",
+      type: "Kiralama",
+      buyer: "Delta Proje",
+      projectName: "Banyo Tadilatı",
+      projectNumber: "PRJ-2025-003",
+      address: "İzmir, Karşıyaka",
+      requestDate: "2025-08-15",
+      deliveryDate: "2025-08-25",
+      shipping: "Dahil",
+      payment: "Kart",
       price: "32.500 ₺",
-      date: "2025-08-25",
       status: "Reddedildi",
     },
   ]);
@@ -41,82 +74,116 @@ export default function MyOffers() {
   const statusColor = (status) => {
     switch (status) {
       case "Kabul Edildi":
-        return "bg-gradient-to-r from-green-400 to-emerald-600 text-white";
+        return "bg-green-100 text-green-700 border border-green-300";
       case "Reddedildi":
-        return "bg-gradient-to-r from-red-400 to-rose-600 text-white";
+        return "bg-red-100 text-red-700 border border-red-300";
       default:
-        return "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-900";
+        return "bg-yellow-100 text-yellow-700 border border-yellow-300";
     }
   };
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
+    <div className="flex min-h-screen bg-gray-50">
       {/* Sol Menü */}
-      <div className="w-64 border-r bg-white/80 backdrop-blur-md shadow-lg">
+      <div className="w-64 border-r bg-white">
         <UserSideBar />
       </div>
 
       {/* Sağ Kısım */}
-      <div className="flex-1 p-10">
-        <h1 className="text-3xl font-extrabold mb-8 bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">
-          Tekliflerim
+      <div className="flex-1 p-8">
+        <h1 className="text-2xl font-bold mb-8 text-gray-800">
+          Gelen Tekliflerim
         </h1>
 
         {offers.length === 0 && (
           <p className="text-gray-500">Henüz teklif bulunmamaktadır.</p>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {offers.map((offer, i) => (
             <motion.div
               key={offer.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
-              <Card className="flex flex-col justify-between rounded-2xl border border-gray-200 shadow-xl bg-white/70 backdrop-blur-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-lg font-bold text-gray-800">
-                    {offer.requestTitle}
+              <Card className="flex flex-col rounded-xl border border-gray-200 shadow-sm bg-white hover:shadow-md transition-all duration-200">
+                <CardHeader className="flex flex-col items-start space-y-2">
+                  <CardTitle className="text-lg font-semibold text-gray-900">
+                    {offer.projectName}
                   </CardTitle>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  <div className="text-2xl font-extrabold text-blue-600">
-                    {offer.price}
-                  </div>
-
-                  <div className="flex items-center gap-2 text-gray-600 text-sm">
-                    <CalendarDays className="w-4 h-4 text-blue-500" />
-                    <span>{offer.date}</span>
-                  </div>
-
-                  <Badge
-                    className={`px-3 py-1 text-xs font-semibold rounded-full shadow-md ${statusColor(
-                      offer.status
-                    )}`}
-                  >
+                  <Badge className={statusColor(offer.status)}>
                     {offer.status}
                   </Badge>
+                </CardHeader>
+
+                <CardContent className="space-y-3 text-sm text-gray-700">
+                  <div className="font-bold text-xl text-indigo-600">
+                    {offer.price}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Building2 className="w-4 h-4 text-gray-500" />
+                    <span>{offer.buyer}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CalendarDays className="w-4 h-4 text-gray-500" />
+                    <span>
+                      {offer.requestDate} → {offer.deliveryDate}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-gray-500" />
+                    <span>{offer.address}</span>
+                  </div>
                 </CardContent>
 
-                <CardFooter className="flex gap-2 justify-end">
+                {/* Accordion Detaylar */}
+                <Accordion type="single" collapsible>
+                  <AccordionItem value="details">
+                    <AccordionTrigger className="px-4 text-sm text-gray-600">
+                      Detaylar
+                    </AccordionTrigger>
+                    <AccordionContent className="px-4 pb-4 space-y-2 text-sm text-gray-600">
+                      <p>
+                        <strong>Talep Türü:</strong> {offer.type}
+                      </p>
+                      <p>
+                        <strong>Proje No:</strong> {offer.projectNumber}
+                      </p>
+                      <p>
+                        <strong>Nakliye:</strong> {offer.shipping}
+                      </p>
+                      <p className="flex items-center gap-1">
+                        <CreditCard className="w-4 h-4 text-gray-500" />
+                        <span>Ödeme Şekli: {offer.payment}</span>
+                      </p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+
+                <CardFooter className="flex gap-2 justify-end p-4">
+               
+
                   <Button
                     size="sm"
-                    variant="outline"
-                    className="rounded-xl border-gray-300 hover:bg-gray-100"
-                  >
-                    Detay
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="rounded-xl bg-gradient-to-r from-green-400 to-emerald-600 text-white shadow-lg hover:opacity-90"
+                    className={`rounded-lg bg-green-600 text-white hover:bg-green-700 ${
+                      offer.status !== "Beklemede"
+                        ? "opacity-50 cursor-not-allowed hover:bg-green-600"
+                        : ""
+                    }`}
+                    disabled={offer.status !== "Beklemede"}
                   >
                     Kabul Et
                   </Button>
+
                   <Button
                     size="sm"
-                    className="rounded-xl bg-gradient-to-r from-red-400 to-rose-600 text-white shadow-lg hover:opacity-90"
+                    className={`rounded-lg bg-red-600 text-white hover:bg-red-700 ${
+                      offer.status !== "Beklemede"
+                        ? "opacity-50 cursor-not-allowed hover:bg-red-600"
+                        : ""
+                    }`}
+                    disabled={offer.status !== "Beklemede"}
                   >
                     Reddet
                   </Button>
